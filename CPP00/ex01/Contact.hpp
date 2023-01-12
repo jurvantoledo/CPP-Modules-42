@@ -8,8 +8,6 @@
 
 class Contact {
 	public:
-		Contact(void);
-
 		void	setContact(void);
 		void	printContact(void);
 		void	displayContact(void);
