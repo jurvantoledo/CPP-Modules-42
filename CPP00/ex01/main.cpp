@@ -3,6 +3,7 @@
 int main()
 {
     PhoneBook phonebook;
+    bool active = true;
     std::string command;
 
     std::cout << "Welcome to secret phonebook" << std::endl;
@@ -11,7 +12,7 @@ int main()
     std::cout << "SEARCH: search a contact in the phonebook" << std::endl;
     std::cout << "EXIT: close and delete your phonebook" << std::endl;
 
-    while (1)
+    while (active)
     {
         std::cout << "Enter command: ";
         std::getline(std::cin, command);
@@ -22,12 +23,12 @@ int main()
         }
         else if (command == "SEARCH")
         {
-            std::cout << "Make a function that searches for a user";
+            phonebook.searchContact();
         }
         else if (command == "EXIT")
         {
-            std::cout << "Make a function that exits the program and delete the phonebook";
-            return (EXIT_SUCCESS);
+            std::cout << "Closing phonebook" << std::endl;
+            active = false;
         }
     }
 

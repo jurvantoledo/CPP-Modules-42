@@ -8,10 +8,13 @@ class PhoneBook {
 		PhoneBook();
 
 		void	addContact(void);
+		void	searchContact(void);
 
 	private:
-		Contact contacts[8];
-		int		index;
+		void	showPhoneBook(void);
+		void	removeContact(void);
+		Contact _contacts[8];
+		int		_index;
 };
 
 #endif
