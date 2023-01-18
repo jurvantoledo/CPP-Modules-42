@@ -6,6 +6,11 @@ PhoneBook::PhoneBook()
     return ;
 }
 
+PhoneBook::~PhoneBook()
+{
+    
+}
+
 void PhoneBook::showPhoneBook(void)
 {
     int i = 0;
