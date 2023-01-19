@@ -1,8 +1,8 @@
 #include "HumanA.hpp"
 
-HumanA::HumanA(std::string name, Weapon &weapon) : _weapon(weapon)
+// initializing in function
+HumanA::HumanA(std::string name, Weapon &weapon) : _weapon(weapon), _name(name)
 {
-    this->_name = name;
     return ;
 }
 
