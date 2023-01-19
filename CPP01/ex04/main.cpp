@@ -4,6 +4,13 @@
 
 int main(int argc, char *argv[])
 {
+
+    if (argc < 4 || argc > 5)
+    {
+        std::cout << "Please use 4 arguments" << std::endl;
+        return (EXIT_FAILURE);
+    }
+
     std::string filename = argv[1];
     std::string s1 = argv[2];
     std::string s2 = argv[3];
@@ -39,7 +46,7 @@ int main(int argc, char *argv[])
     
     // Check string for size and replace word
     int pos = 0;
-    for (size_t i = 0; i < (int)content.size(); i++)
+    for (int i = 0; i < (int)content.size(); i++)
     {
         pos = (int)content.find(s1, i);
         if (pos != -1 && pos == i)
