@@ -10,25 +10,29 @@ Harl::~Harl()
 
 void Harl::debug()
 {
-    std::cout << "[ DEBUG ]" << std::endl;
+    std::cout << std::endl;
+    std::cout << "[ DEBUG ]:" << std::endl;
     std::cout << "This is a DEBUG message" << std::endl;
 }
 
 void Harl::info()
 {
-    std::cout << "[ INFO ]" << std::endl;
+    std::cout << std::endl;
+    std::cout << "[ INFO ]:" << std::endl;
     std::cout << "This is a INFO message" << std::endl;
 }
 
 void Harl::warning()
 {
-    std::cout << "[ WARNING ]" << std::endl;
+    std::cout << std::endl;
+    std::cout << "[ WARNING ]:" << std::endl;
     std::cout << "This is a WARNING message" << std::endl;
 }
 
 void Harl::error()
 {
-    std::cout << "[ ERROR ]" << std::endl;
+    std::cout << std::endl;
+    std::cout << "[ ERROR ]:" << std::endl;
     std::cout << "This is a ERROR message" << std::endl;
     std::cout << std::endl;
 }
