@@ -41,8 +41,8 @@ void Harl::complain(std::string level)
 
     // Pointer function met alle funties
     // Maakt een pointer functie aan en in die pointer functie gooi ik andere functies.
-	typedef void(Harl::*ptrFunc[])();
-	ptrFunc func = {
+	typedef void(Harl::*ptrToMemFunc[])();
+	ptrToMemFunc func = {
 		&Harl::debug,
 		&Harl::info,
 		&Harl::warning,
