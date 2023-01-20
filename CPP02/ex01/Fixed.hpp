@@ -21,7 +21,7 @@ class Fixed
         int toInt(void) const;
 
     private:
-        int storeFixedPoint;
+        int value;
         static const int fractionalBits = 8;
 };
 
