@@ -60,6 +60,18 @@ int Fixed::toInt(void) const
     return this->storeFixedPoint >> fractionalBits;
 }
 
+/**
+ * @brief std::ostream
+ * The ostream class has methods for formatting output.
+ * These output stream objects are used to write data as a sequence of characters on the screen.
+ */
+
+/**
+ * @brief Overload Operators
+ * Overloaded operators are functions with special names: 
+ * the keyword "operator" followed by the symbol for the operator being defined. 
+ * Like any other function, an overloaded operator has a return type and a parameter list.
+ */
 std::ostream& operator<<(std::ostream &o, const Fixed &fixed)
 {
     o << fixed.toFloat();
