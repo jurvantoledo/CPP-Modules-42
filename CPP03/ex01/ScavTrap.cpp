@@ -31,3 +31,28 @@ ScavTrap::ScavTrap(const ClapTrap &old) : ClapTrap(old)
     this->energyPoints = old.energyPoints;
     this->attackDamage = old.attackDamage;
 }
+
+void ScavTrap::attack(const std::string &target)
+{
+    if (hitPoints == 0)
+    {
+        std::cout << "ScavTrap " << this->name << " is already dead" << std::endl;
+    }
+    else
+    {
+       if (this->energyPoints > 0)
+       {
+            std::cout << "ScavTrap " << this->name << " attacks " << target << " causing "; 
+            std::cout << this->attackDamage << " damage" << std::endl;
+            this->energyPoints--;
+       }
+        else
+            std::cout << "No Energy Left" << std::endl;
+        std::cout << "Total Energy "<<  this->energyPoints << std::endl << std::endl;
+    }
+}
+
+void ScavTrap::guardGate(void)
+{
+    std::cout << "ScavTrap " << this->name << " is in gate keeper mode" << std::endl;
+}
