@@ -5,7 +5,7 @@
 #include "Cat.hpp"
 #include "Dog.hpp"
 
-class Animal: public Cat, public Dog
+class Animal
 {
     public:
         Animal();
