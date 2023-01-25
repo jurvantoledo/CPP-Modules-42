@@ -10,6 +10,7 @@ class Cat: public Animal
         Cat();
         ~Cat();
 
+        void makeSound();
     private:
         /* data */
 };
