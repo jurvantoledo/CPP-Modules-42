@@ -10,12 +10,16 @@ class Animal
     public:
         Animal();
         Animal(const Animal &obj);
-        ~Animal();
+        Animal &operator = (const Animal &obj);
+        virtual ~Animal();
 
-    private:
+        virtual void makeSound(void) const;
+        std::string getType(void) const;
     
     protected:
         std::string type;
+
+    private:
 };
 
 #endif
