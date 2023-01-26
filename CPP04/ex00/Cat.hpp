@@ -1,5 +1,4 @@
 #ifndef CAT_H
-
 #define CAT_H
 
 #include "Animal.hpp"
@@ -12,7 +11,7 @@ class Cat : public Animal
 		Cat &operator=(const Cat &old_obj);
         ~Cat();
 
-        void makeSound();
+        void makeSound() const;
 
     private:
 };

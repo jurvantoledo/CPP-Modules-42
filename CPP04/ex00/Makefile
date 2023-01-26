@@ -1,11 +1,13 @@
-NAME = claptrap
+NAME = animal
 CC = g++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC =	main.cpp \
 		Animal.cpp \
 		Dog.cpp \
-		Cat.cpp
+		Cat.cpp \
+		WrongAnimal.cpp \
+		WrongCat.cpp
 
 OBJ = $(SRC:%.cpp=%.o)
 

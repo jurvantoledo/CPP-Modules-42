@@ -3,11 +3,13 @@
 Cat::Cat() : Animal()
 {
     std::cout << "Cat Default Constructor is called" << std::endl;
+    this->type = "Cat";
 }
 
 Cat::Cat(const Cat &obj)
 {
     std::cout << "Cat Copy Constructor is called" << std::endl;
+    *this = obj;
 }
 
 Cat& Cat::operator=(const Cat &obj)
@@ -23,7 +25,7 @@ Cat::~Cat()
 }
 
 
-void Cat::makeSound()
+void Cat::makeSound() const
 {
     std::cout << this->type << " Makes sad cat noises" << std::endl;
 }

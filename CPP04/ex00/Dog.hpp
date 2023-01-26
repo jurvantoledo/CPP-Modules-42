@@ -12,7 +12,7 @@ class Dog : public Animal
 		Dog &operator=(const Dog &old_obj);
         ~Dog();
 
-        void makeSound();
+        void makeSound() const;
 
     private:
 };

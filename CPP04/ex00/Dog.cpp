@@ -25,7 +25,7 @@ Dog::~Dog()
 }
 
 
-void Dog::makeSound()
+void Dog::makeSound() const
 {
     std::cout << this->type << " Makes sad dog noises" << std::endl;
 }

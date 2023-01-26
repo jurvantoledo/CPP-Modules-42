@@ -2,8 +2,6 @@
 
 #define ANIMAL_H
 #include <iostream>
-#include "Cat.hpp"
-#include "Dog.hpp"
 
 class Animal
 {
