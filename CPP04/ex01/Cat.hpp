@@ -2,6 +2,7 @@
 #define CAT_H
 
 #include "Animal.hpp"
+#include "Brain.hpp"
 
 class Cat : public Animal
 {
@@ -14,6 +15,7 @@ class Cat : public Animal
         void makeSound() const;
 
     private:
+        Brain *brain;
 };
 
 #endif
