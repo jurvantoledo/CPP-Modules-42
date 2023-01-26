@@ -41,6 +41,7 @@ int main()
 
     // Onderstaande code is dus niet meer mogelijk omdat door virtual = 0 de class abstract is geworden
     // const Animal* meta = new Animal();
+    // const WrongAnimal* meta2 = new WrongAnimal();
     
     return (0);
 }
