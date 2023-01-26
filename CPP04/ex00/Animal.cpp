@@ -2,20 +2,33 @@
 
 Animal::Animal()
 {
-    std::cout << "Default Constructor is called" << std::endl;
-}
-
-Animal::~Animal()
-{
-    std::cout << "Destructor is called" << std::endl;
+    std::cout << "Animal Default Constructor is called" << std::endl;
+    this->type = "Animal";
 }
 
 Animal::Animal(const Animal &obj) 
 {
-    std::cout << "Copy Constructor is called" << std::endl;
+    std::cout << "Animal Copy Constructor is called" << std::endl;
+    *this = obj;
 }
 
-Animal& Animal::operator=(const Animal &old)
+Animal& Animal::operator=(const Animal &obj)
 {
-    std::cout << "Copy assignment operator called" << std::endl;
+    std::cout << "Animal Copy assignment operator called" << std::endl;
+    this->type = obj.type;
+}
+
+Animal::~Animal()
+{
+    std::cout << "Animal Destructor is called" << std::endl;
+}
+
+void Animal::makeSound() const
+{
+    std::cout << this->type << " Makes sound" << std::endl;
+}
+
+std::string Animal::getType(void) const
+{
+    return this->type;
 }
