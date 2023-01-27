@@ -28,25 +28,28 @@ void PhoneBook::showPhoneBook(void)
 
 void PhoneBook::searchContact(void)
 {
+    if (_index == 0)
+    {
+        std::cout << "No contacts in your phonebook" << std::endl;
+        return ;
+    }
+
     std::cout << "This are the contacts in your phonebook" << std::endl;
     showPhoneBook();
 
     std::string str_idx;
-    bool        active;
+    bool        active = true;
 
-    active = true;
     std::cout << "Enter index of contact to see full info" << std::endl;
     while (active)
     {
         std::cout << "Enter the index: ";
         std::getline(std::cin, str_idx);
-
         int i = atoi(str_idx.c_str());
 
         if (i < 1 || i > _index)
         {
             std::cout << "Contact does not exists. Choose number between 1 and " << _index << std::endl;
-            active = false;
         }
         else
         {
