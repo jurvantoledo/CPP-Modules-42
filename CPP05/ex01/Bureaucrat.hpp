@@ -17,6 +17,7 @@ class Bureaucrat
         int getGrade() const;
         void incrementGrade();
         void decrementGrade();
+        void signForm();
 
         // Exception functions
         class GradeTooHighException : std::exception
