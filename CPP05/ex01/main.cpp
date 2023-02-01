@@ -1,4 +1,5 @@
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int main()
 {
@@ -6,25 +7,13 @@ int main()
     std::cout << "<< ---------- BUREAUCRAT WITH VALID GRADE ---------- >>" << std::endl;
     try
     {
-        Bureaucrat jan("Jan", 25);
-        std::cout << jan << std::endl;
-    }
-    catch(Bureaucrat::GradeTooLowException &e)
-    {
-        std::cerr << e.what() << '\n';
-    }
-    catch(Bureaucrat::GradeTooHighException &e)
-    {
-        std::cerr << e.what() << '\n';
-    }
-    std::cout << std::endl;
+        Bureaucrat jan("Jan", 45);
+        Form form1("Form 1", 50, 100);
+        std::cout << jan << std::endl; 
+        std::cout << form1 << std::endl;
 
-    std::cout << std::endl;
-    std::cout << "<< ---------- BUREAUCRAT WITH TOO HIGH INVALID GRADE ---------- >>" << std::endl;
-    try
-    {
-        Bureaucrat jan("Jan", 151);
-        std::cout << jan << std::endl;
+        jan.signForm(form1);
+        std::cout << std::endl << std::endl;
     }
     catch(Bureaucrat::GradeTooLowException &e)
     {
@@ -34,23 +23,8 @@ int main()
     {
         std::cerr << e.what() << '\n';
     }
-    std::cout << std::endl;
+    
 
-    std::cout << std::endl;
-    std::cout << "<< ---------- BUREAUCRAT WITH TOO LOW INVALID GRADE ---------- >>" << std::endl;
-    try
-    {
-        Bureaucrat jan("Jan", 0);
-        std::cout << jan << std::endl;
-    }
-    catch(Bureaucrat::GradeTooLowException &e)
-    {
-        std::cerr << e.what() << '\n';
-    }
-    catch(Bureaucrat::GradeTooHighException &e)
-    {
-        std::cerr << e.what() << '\n';
-    }
     std::cout << std::endl;
     return (0);
 }

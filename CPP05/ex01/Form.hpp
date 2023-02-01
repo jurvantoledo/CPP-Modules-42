@@ -2,43 +2,52 @@
 
 #define FORM_H
 #include <iostream>
-#include "Bureaucrat.hpp"
+
+class Bureaucrat;
 
 class Form
 {
-    public:
-        Form(const std::string &inp_name, bool sign, const int signGrade, const int execGrade);
-        Form(const Form &obj);
-        Form &operator=(const Form &obj);
-        ~Form();
-
-        // Member functions
-        std::string getName() const;
-        int getGrade() const;
-        void incrementGrade();
-        void decrementGrade();
-        void beSigned(Bureaucrat& bureau);
-
-        // Exception functions
-        class GradeTooHighException : std::exception
-		{
-			public:
-				const char *what() const throw ();
-		};
-        class GradeTooLowException : std::exception
-		{
-			public:
-				const char *what() const throw ();
-		};
-
     private:
         const std::string _name;
         bool _sign;
         const int _signGrade;
         const int _execGrade;
+
+    public:
+        Form(const std::string &inp_name, const int signGrade, const int execGrade);
+        Form(const Form &obj);
+        Form &operator=(const Form &obj);
+        ~Form();
+
+        // Getters
+        std::string getName() const;
+        int getGradeSign() const;
+        int getExecutedGrade() const;
+        bool isSigned() const;
+
+        // Public Member functions
+        void beSigned(Bureaucrat &bureau);
+
+        // Exception functions
+        class GradeTooHighException : std::exception
+		{
+			public:
+				const char *what() const throw ()
+                {
+                    return ("Grade is too high!");
+                }
+		};
+        class GradeTooLowException : std::exception
+		{
+			public:
+				const char *what() const throw ()
+                {
+                    return ("Grade is too low!");
+                }
+		};
 };
 
 // Insertion overload operator
-std::ostream& operator<<(std::ostream& o, const Form& form);
+std::ostream& operator<<(std::ostream& out, const Form &form);
 
 #endif
