@@ -1,55 +1,68 @@
-#include "Bureaucrat.hpp"
+#include "./include/Bureaucrat.hpp"
+#include "./include/ShrubberyCreationForm.hpp"
+#include "./include/PresidentialPardonForm.hpp"
+#include "./include/RobotomyRequestForm.hpp"
+#include "./include/AForm.hpp"
 
 int main()
 {
+    std::cout << "<< ---------- BUREAUCRAT ---------- >>" << std::endl;
     std::cout << std::endl;
-    std::cout << "<< ---------- BUREAUCRAT WITH VALID GRADE ---------- >>" << std::endl;
     try
     {
         Bureaucrat jan("Jan", 25);
-        std::cout << jan << std::endl;
+        PresidentialPardonForm pres("De baas");
+        std::cout << std::endl;
+        jan.signForm(pres);
+        jan.executeForm(pres);
     }
-    catch(Bureaucrat::GradeTooLowException &e)
+    catch(AForm::GradeTooLowException& e)
     {
         std::cerr << e.what() << '\n';
     }
-    catch(Bureaucrat::GradeTooHighException &e)
+    catch (AForm::GradeTooHighException& e) 
     {
-        std::cerr << e.what() << '\n';
+        std::cerr << e.what() << std::endl;
     }
     std::cout << std::endl;
-
+    std::cout << "<< --------------------------------------- >>" << std::endl;
     std::cout << std::endl;
-    std::cout << "<< ---------- BUREAUCRAT WITH TOO HIGH INVALID GRADE ---------- >>" << std::endl;
     try
     {
-        Bureaucrat jan("Jan", 151);
-        std::cout << jan << std::endl;
+        Bureaucrat kees("Kees", 72);
+        RobotomyRequestForm robot("cool");
+        std::cout << std::endl;
+        kees.signForm(robot);
+        kees.executeForm(robot);
     }
-    catch(Bureaucrat::GradeTooLowException &e)
+    catch(AForm::GradeTooLowException& e)
     {
         std::cerr << e.what() << '\n';
     }
-    catch(Bureaucrat::GradeTooHighException &e)
+    catch (AForm::GradeTooHighException& e) 
     {
-        std::cerr << e.what() << '\n';
+        std::cerr << e.what() << std::endl;
     }
     std::cout << std::endl;
-
+    std::cout << "<< --------------------------------------- >>" << std::endl;
     std::cout << std::endl;
-    std::cout << "<< ---------- BUREAUCRAT WITH TOO LOW INVALID GRADE ---------- >>" << std::endl;
+    std::cout << "<< --------------------------------------- >>" << std::endl;
+    std::cout << std::endl;
     try
     {
-        Bureaucrat jan("Jan", 0);
-        std::cout << jan << std::endl;
+        Bureaucrat henk("Henk", 145);
+        ShrubberyCreationForm shrub("lol");
+        std::cout << std::endl;
+        henk.signForm(shrub);
+        henk.executeForm(shrub);
     }
-    catch(Bureaucrat::GradeTooLowException &e)
+    catch(AForm::GradeTooLowException& e)
     {
         std::cerr << e.what() << '\n';
     }
-    catch(Bureaucrat::GradeTooHighException &e)
+    catch (AForm::GradeTooHighException& e) 
     {
-        std::cerr << e.what() << '\n';
+        std::cerr << e.what() << std::endl;
     }
     std::cout << std::endl;
     return (0);
