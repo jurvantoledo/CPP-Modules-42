@@ -2,6 +2,10 @@
 
 #define INTERN_H
 #include <iostream>
+#include "Form.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
 
 class Intern
 {
@@ -13,6 +17,14 @@ class Intern
         Intern(const Intern &obj);
         Intern &operator=(const Intern &obj);
         ~Intern();
+
+        Form *makeForm(std::string formName, std::string target);
+
+		class InvalidArg : std::exception
+		{
+			public:
+				const char *what() const throw ();
+		};
 };
 
 #endif
