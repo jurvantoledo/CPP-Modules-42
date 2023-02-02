@@ -1,6 +1,7 @@
 #ifndef INTERN_H
 
 #define INTERN_H
+#include <iostream>
 
 class Intern
 {
@@ -9,6 +10,8 @@ class Intern
     
     public:
         Intern();
+        Intern(const Intern &obj);
+        Intern &operator=(const Intern &obj);
         ~Intern();
 };
 
