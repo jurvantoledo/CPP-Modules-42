@@ -1,6 +1,6 @@
-#ifndef FORM_H
+#ifndef AFORM_H
 
-#define FORM_H
+#define AFORM_H
 #include <iostream>
 
 class Bureaucrat;
