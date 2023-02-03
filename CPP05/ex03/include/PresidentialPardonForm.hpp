@@ -2,11 +2,11 @@
 
 #define PRES_PARDON_FORM_H
 #include <iostream>
-#include "AForm.hpp"
+#include "Form.hpp"
 
 class Bureaucrat;
 
-class PresidentialPardonForm : public AForm
+class PresidentialPardonForm : public Form
 {
     private:
         const std::string _target;

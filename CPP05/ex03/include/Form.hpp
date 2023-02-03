@@ -5,7 +5,7 @@
 
 class Bureaucrat;
 
-class AForm
+class Form
 {
     private:
         const std::string _name;
@@ -14,10 +14,10 @@ class AForm
         const int _execGrade;
 
     public:
-        AForm(const std::string &inp_name, const int signGrade, const int execGrade);
-        AForm(const AForm &obj);
-        AForm &operator=(const AForm &obj);
-        virtual ~AForm() = 0;
+        Form(const std::string &inp_name, const int signGrade, const int execGrade);
+        Form(const Form &obj);
+        Form &operator=(const Form &obj);
+        virtual ~Form() = 0;
 
         // Getters
         std::string getName() const;
@@ -49,6 +49,6 @@ class AForm
 };
 
 // Insertion overload operator
-std::ostream& operator<<(std::ostream& out, const AForm &form);
+std::ostream& operator<<(std::ostream& out, const Form &form);
 
 #endif

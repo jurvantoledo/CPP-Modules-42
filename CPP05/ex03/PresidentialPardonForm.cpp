@@ -1,13 +1,13 @@
 #include "./include/PresidentialPardonForm.hpp"
 #include "./include/Bureaucrat.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm(const std::string &target) : AForm("PresidentialPardonForm", 25, 5), \
+PresidentialPardonForm::PresidentialPardonForm(const std::string &target) : Form("PresidentialPardonForm", 25, 5), \
                                                                             _target(target)
 {
     std::cout << "Default contstructor called" << std::endl;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &obj) : AForm(obj), _target(obj._target)
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &obj) : Form(obj), _target(obj._target)
 {
     std::cout << "Copy constructor is called" << std::endl;
     *this = obj;
@@ -33,6 +33,6 @@ void PresidentialPardonForm::execute(Bureaucrat const &executor)
     }
     else
     {
-        throw AForm::GradeTooLowException();
+        throw Form::GradeTooLowException();
     }
 }

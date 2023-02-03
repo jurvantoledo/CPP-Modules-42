@@ -2,13 +2,13 @@
 #include "./include/Bureaucrat.hpp"
 #include <fstream>
 
-ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target) : AForm("ShrubberyCreationForm", 145, 137), \
+ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target) : Form("ShrubberyCreationForm", 145, 137), \
                                                                         _target(target)
 {
     std::cout << "Default constructor is called" << std::endl;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &obj) : AForm(obj), _target(obj._target)
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &obj) : Form(obj), _target(obj._target)
 {
     std::cout << "Copy constructor is called" << std::endl;
     *this = obj;
@@ -52,6 +52,6 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor)
     }
     else
     {
-        throw AForm::GradeTooLowException();
+        throw Form::GradeTooLowException();
     }
 }

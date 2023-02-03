@@ -1,13 +1,13 @@
 #include "./include/RobotomyRequestForm.hpp"
 #include "./include/Bureaucrat.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm(const std::string &target) : AForm("RobotomyRequestForm", 72, 45), \
+RobotomyRequestForm::RobotomyRequestForm(const std::string &target) : Form("RobotomyRequestForm", 72, 45), \
                                                                     _target(target)
 {
     std::cout << "Default constructor called" << std::endl;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &obj) : AForm(obj), _target(obj._target)
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &obj) : Form(obj), _target(obj._target)
 {
     std::cout << "Copy constructor is called" << std::endl;
     *this = obj;

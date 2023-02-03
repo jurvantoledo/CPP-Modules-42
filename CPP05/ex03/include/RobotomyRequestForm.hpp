@@ -2,11 +2,11 @@
 
 #define ROBOT_REQUEST_FORM_H
 #include <iostream>
-#include "AForm.hpp"
+#include "Form.hpp"
 
 class Bureaucrat;
 
-class RobotomyRequestForm : public AForm
+class RobotomyRequestForm : public Form
 {
     private:
         const std::string _target;

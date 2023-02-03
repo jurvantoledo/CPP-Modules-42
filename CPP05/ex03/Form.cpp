@@ -1,60 +1,60 @@
-#include "./include/AForm.hpp"
+#include "./include/Form.hpp"
 #include "./include/Bureaucrat.hpp"
 
-AForm::AForm(const std::string &inp_name, const int signGrade, const int execGrade) : \
+Form::Form(const std::string &inp_name, const int signGrade, const int execGrade) : \
             _name(inp_name),  _signGrade(signGrade), _execGrade(execGrade)
 {
     std::cout << "Default constructor called" << std::endl;
     if (execGrade < 1)
     {
-        throw AForm::GradeTooHighException();
+        throw Form::GradeTooHighException();
     }
     if (execGrade > 150)
     {
-        throw AForm::GradeTooLowException();
+        throw Form::GradeTooLowException();
     }
 }
 
-AForm::AForm(const AForm &obj) : _name(obj._name), _sign(obj._sign), \
+Form::Form(const Form &obj) : _name(obj._name), _sign(obj._sign), \
                              _signGrade(obj._signGrade), _execGrade(obj._execGrade)
 {
     std::cout << "Copy constructor called" << std::endl;
     *this = obj;
 }
 
-AForm& AForm::operator=(const AForm &obj)
+Form& Form::operator=(const Form &obj)
 {
     std::cout << "Copy assignment operator is called" << std::endl;
     (void)&obj;
     return (*this);
 }
 
-AForm::~AForm()
+Form::~Form()
 {
     std::cout << "Destructor is called" << std::endl;
 }
 
-std::string AForm::getName() const
+std::string Form::getName() const
 {
     return (this->_name);
 }
 
-int AForm::getGradeSign() const
+int Form::getGradeSign() const
 {
     return (this->_signGrade);
 }
 
-int AForm::getExecutedGrade() const
+int Form::getExecutedGrade() const
 {
     return (this->_execGrade);
 }
 
-bool AForm::isSigned() const
+bool Form::isSigned() const
 {
     return (this->_sign);
 }
 
-void AForm::beSigned(Bureaucrat &bureau)
+void Form::beSigned(Bureaucrat &bureau)
 {
     if (bureau.getGrade() <= this->getGradeSign())
     {
@@ -63,21 +63,21 @@ void AForm::beSigned(Bureaucrat &bureau)
     else
     {
         this->_sign = false;
-        throw AForm::GradeTooLowException();
+        throw Form::GradeTooLowException();
     }
 }
 
-void AForm::execute(Bureaucrat const &executor)
+void Form::execute(Bureaucrat const &executor)
 {
     if (executor.getGrade() <= this->_execGrade)
     {
         std::cout << "Form executed" << std::endl;
     }
     else
-        throw AForm::GradeTooLowException();
+        throw Form::GradeTooLowException();
 }
 
-std::ostream& operator<<(std::ostream& out, const AForm &form)
+std::ostream& operator<<(std::ostream& out, const Form &form)
 {
     out << "Name " << form.getName() << " Grade to sign: " << form.getGradeSign() << \
         " Grade to execute: " << form.getExecutedGrade() << " is it signed: " << form.isSigned();

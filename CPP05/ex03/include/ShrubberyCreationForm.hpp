@@ -2,11 +2,11 @@
 
 #define SHRUB_CREATE_FORM_H
 #include <iostream>
-#include "AForm.hpp"
+#include "Form.hpp"
 
 class Bureaucrat;
 
-class ShrubberyCreationForm : public AForm
+class ShrubberyCreationForm : public Form
 {
     private:
         const std::string _target;
