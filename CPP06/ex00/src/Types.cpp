@@ -8,14 +8,22 @@ Types::Types()
 Types::Types(const Types &obj)
 {
     std::cout << "Copy constructor is called" << std::endl;
+    *this = obj;
 }
 
 Types& Types::operator=(const Types &obj)
 {
     std::cout << "Copy assignment operator is called" << std::endl;
+    (void)obj;
+    return (*this);
 }
 
 Types::~Types()
 {
     std::cout << "Destructor is called" << std::endl;
+}
+
+void Types::getTypes(char *argv)
+{
+    std::cout << argv << std::endl;
 }

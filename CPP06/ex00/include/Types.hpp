@@ -13,6 +13,8 @@ class Types
         Types(const Types &obj);
         Types &operator=(const Types &obj);
         ~Types();
+
+        void getTypes(char *argv);
 };
 
 
