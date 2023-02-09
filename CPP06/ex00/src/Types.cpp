@@ -1,6 +1,6 @@
 #include "../include/Types.hpp"
 
-Types::Types()
+Types::Types(const std::string &value) : _value(value)
 {
     std::cout << "Default constructor is called" << std::endl;
 }
@@ -23,7 +23,7 @@ Types::~Types()
     std::cout << "Destructor is called" << std::endl;
 }
 
-void Types::getTypes(char *argv)
+void Types::getTypes()
 {
-    std::cout << argv << std::endl;
+    std::cout << this->_value << std::endl;
 }

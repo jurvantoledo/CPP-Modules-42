@@ -6,15 +6,20 @@
 class Types
 {
     private:
-        /* data */
+        std::string _value;
+        char cValue;
+        int iValue;
+        float fValue;
+        double dValue;
+
         
     public:
-        Types();
+        Types(const std::string &value);
         Types(const Types &obj);
         Types &operator=(const Types &obj);
         ~Types();
 
-        void getTypes(char *argv);
+        void getTypes();
 };
 
 
