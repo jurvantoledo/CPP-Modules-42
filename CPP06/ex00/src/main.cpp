@@ -8,6 +8,8 @@ int main(int argc, char *argv[])
         return (0);
     }
     Types lol(argv[1]);
-    lol.getTypes();
+
+    lol.ConvertTo();
+    lol.DisplayVars();
     return (0);
 }
