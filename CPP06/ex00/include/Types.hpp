@@ -20,6 +20,10 @@ class Types
         ~Types();
 
         void getTypes();
+        void ToChar();
+        void ToInt();
+        void ToFloat();
+        void ToDouble();
 };
 
 

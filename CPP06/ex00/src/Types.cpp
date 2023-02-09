@@ -25,5 +25,14 @@ Types::~Types()
 
 void Types::getTypes()
 {
+    if (this->_value.length() == 1)
+    {   
+
+    }
     std::cout << this->_value << std::endl;
+}
+
+void Types::ToChar()
+{
+
 }
