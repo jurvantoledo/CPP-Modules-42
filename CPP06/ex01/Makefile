@@ -1,4 +1,4 @@
-NAME = convert
+NAME = serialization
 CC = g++
 CFLAGS = 
 
