@@ -1,5 +1,11 @@
 #include "../include/Data.hpp"
 
+/**
+ * @brief reinterpret_cast 
+ * reinterpret_cast converts one pointer to another without changing the address, 
+ * or converts between pointers and their numerical (integer) values.
+ */
+
 uintptr_t serialize(Data* ptr)
 {
     uintptr_t new_ptr = reinterpret_cast<uintptr_t>(ptr);
