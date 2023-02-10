@@ -6,6 +6,12 @@
 #include <chrono>
 #include <cstdlib>
 
+/**
+ * @brief dynamic_cast
+ * dynamic_cast casts up and down class hierarchies only,
+ * it is always checking that the conversion requested is valid.
+ */
+
 Base * generate(void)
 {
     int	seed = std::chrono::system_clock::now().time_since_epoch().count();
