@@ -2,13 +2,17 @@
 
 int main()
 {
-    int result1 = swap<int>(2, 3);
-    std::cout << "The first result: " << result1 << std::endl;
-
-    int result2 = min<int>(3, 2);
-    std::cout << "The second result: " << result2 << std::endl;
-
-    int result3 = max<int>(3, 2);
-    std::cout << "The third result: " << result3 << std::endl;
+    int a = 2;
+    int b = 3;
+    ::swap( a, b );
+    std::cout << "a = " << a << ", b = " << b << std::endl;
+    std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
+    std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
+    std::string c = "chaine1";
+    std::string d = "chaine2";
+    ::swap(c, d);
+    std::cout << "c = " << c << ", d = " << d << std::endl;
+    std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
+    std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
     return (0);
 }
