@@ -1,6 +1,6 @@
 NAME = easy
 CC = g++
-CFLAGS = 
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC = 	./src/main.cpp
 
