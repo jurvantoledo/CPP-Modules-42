@@ -1,6 +1,6 @@
 NAME = iter
 CC = g++
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CFLAGS = 
 
 SRC = 	./src/main.cpp
 
