@@ -1,4 +1,7 @@
+#include "../include/Array.hpp"
+
 int main()
 {
-    return (0);
+    Array<int> temp1;
+    Array<int> temp2(10);
 }
