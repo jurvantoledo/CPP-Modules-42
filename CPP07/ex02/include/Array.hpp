@@ -2,10 +2,14 @@
 
 #define ARRAY_H
 
-    template <typename T>
-    void test()
-    {
+template<typename T>
+class Array
+{
+    private:
         
-    }
+    public:
+        Array();
+        ~Array();
+};
 
 #endif

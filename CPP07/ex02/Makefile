@@ -1,4 +1,4 @@
-NAME = iter
+NAME = array
 CC = g++
 CFLAGS = 
 
