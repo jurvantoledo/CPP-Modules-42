@@ -2,7 +2,8 @@ NAME = easy
 CC = g++
 CFLAGS = 
 
-SRC = 	./src/main.cpp
+SRC = 	./src/main.cpp \
+		./src/Span.cpp
 
 OBJ = $(SRC:%.cpp=%.o)
 

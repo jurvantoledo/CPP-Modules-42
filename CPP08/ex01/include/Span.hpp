@@ -7,7 +7,7 @@ class Span
     private:
         /* data */
     public:
-        Span(/* args */);
+        Span();
         ~Span();
 };
 
