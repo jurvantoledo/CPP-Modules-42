@@ -2,10 +2,12 @@
 
 #define SPAN_H
 #include <iostream>
+#include <set>
 
 class Span
 {
     private:
+        std::multiset<int> _numbers;
         size_t max;
 
     public:

@@ -22,3 +22,8 @@ Span::~Span()
 {
     std::cout << "Destructor is called" << std::endl;
 }
+
+void Span::addNumber(int val)
+{
+    this->_numbers.insert(val);
+}
