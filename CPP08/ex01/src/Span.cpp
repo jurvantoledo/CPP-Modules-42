@@ -1,6 +1,6 @@
 #include "../include/Span.hpp"
 
-Span::Span(size_t amount) : max(amount)
+Span::Span(size_t amount) : _max(amount)
 {
     std::cout << "Default constructor is called" << std::endl;
 }
@@ -14,7 +14,8 @@ Span::Span(const Span &obj)
 Span& Span::operator=(const Span &obj)
 {
     std::cout << "Copy assignment operator is called" << std::endl;
-    (void)obj;
+    this->_max = obj._max;
+    this->_numbers = obj._numbers;
     return (*this);
 }
 
@@ -25,5 +26,34 @@ Span::~Span()
 
 void Span::addNumber(int val)
 {
-    this->_numbers.insert(val);
+    if (this->_numbers.size() <  _max)
+        this->_numbers.push_back(val);
+    else
+        throw ArrayOverflow();
+}
+
+int Span::shortestSpan()
+{
+    if (this->_numbers.size() < 2)
+    {
+        throw NotEnoughNumbers();
+    }
+    
+    std::vector<int> copy = this->_numbers;
+
+    std::sort(copy.begin(), copy.end());
+
+    return (copy.at(1) - copy.at(0));
+}
+
+int Span::longestSpan()
+{
+    if (this->_numbers.size() < 2)
+        throw NotEnoughNumbers();
+    
+    std::vector<int> copy = this->_numbers;
+
+    std::sort(copy.begin(), copy.end());
+
+    return (copy.back());
 }

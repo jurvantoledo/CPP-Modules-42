@@ -1,4 +1,4 @@
-NAME = easy
+NAME = span
 CC = g++
 CFLAGS = 
 

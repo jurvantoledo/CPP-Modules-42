@@ -2,13 +2,13 @@
 
 #define SPAN_H
 #include <iostream>
-#include <set>
+#include <vector>
 
 class Span
 {
     private:
-        std::multiset<int> _numbers;
-        size_t max;
+        size_t _max;
+        std::vector<int> _numbers;
 
     public:
         Span(size_t amount);
@@ -17,8 +17,27 @@ class Span
         ~Span();
 
         void addNumber(int val);
-        size_t shortestSpan();
-        size_t longestSpan();
+        int shortestSpan();
+        int longestSpan();
+    
+    private:
+        class ArrayOverflow: std::exception
+        {
+            public:
+                const char *what() const throw()
+                {
+                    return ("Overflow max size of array");
+                }
+        };
+
+        class NotEnoughNumbers: std::exception
+        {
+            public:
+                const char *what() const throw()
+                {
+                    return ("Not enough numbers");
+                }
+        };
 };
 
 #endif
