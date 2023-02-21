@@ -6,14 +6,8 @@ PhoneBook::PhoneBook()
     return ;
 }
 
-PhoneBook::~PhoneBook()
-{
-    
-}
-
 void PhoneBook::showPhoneBook(void)
 {
-    int i = 0;
     std::cout << std::endl << std::setw(10) << "INDEX" << "|";
     std::cout << std::setw(10) << "First name" << "|";
     std::cout << std::setw(10) << "Last name" << "|";
