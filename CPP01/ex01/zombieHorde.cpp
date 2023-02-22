@@ -9,7 +9,7 @@ Zombie *zombieHorde(int N, std::string name)
     int i = 0;
     while (i < N)
     {
-        horde[i].nameZombie("Bert");
+        horde[i].nameZombie(name);
         horde[i].announce();
         i++;
     }
