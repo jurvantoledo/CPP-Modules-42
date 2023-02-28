@@ -1,5 +1,5 @@
 NAME = convert
-CC = g++
+CC = c++
 CFLAGS = 
 
 SRC = 	./src/main.cpp \

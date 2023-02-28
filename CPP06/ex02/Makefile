@@ -1,5 +1,5 @@
 NAME = identify
-CC = g++
+CC = c++
 CFLAGS = 
 
 SRC = 	./src/main.cpp \

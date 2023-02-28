@@ -1,5 +1,5 @@
 NAME = serialization
-CC = g++
+CC = c++
 CFLAGS = 
 
 SRC = 	./src/main.cpp \
