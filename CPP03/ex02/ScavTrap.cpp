@@ -2,7 +2,7 @@
 
 ScavTrap::ScavTrap() : ClapTrap()
 {
-    std::cout << "Default constructor is called" << std::endl;
+    std::cout << "SCAV Default constructor is called" << std::endl;
     this->name = "Bruh";
     this->hitPoints = 100;
     this->energyPoints = 50;
@@ -11,7 +11,7 @@ ScavTrap::ScavTrap() : ClapTrap()
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
-    std::cout << "Default constructor is called" << std::endl;
+    std::cout << "SCAV Default constructor is called" << std::endl;
     this->name = name;
     this->hitPoints = 100;
     this->energyPoints = 50;
@@ -20,12 +20,12 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 
 ScavTrap::~ScavTrap()
 {
-    std::cout << "Destructor is called" << std::endl;
+    std::cout << "SCAV Destructor is called" << std::endl;
 }
 
 ScavTrap::ScavTrap(const ScavTrap &old) : ClapTrap(old)
 {
-    std::cout << "Copy constructor is called" << std::endl;
+    std::cout << "SCAV Copy constructor is called" << std::endl;
     this->name = old.name;
     this->hitPoints = old.hitPoints;
     this->energyPoints = old.energyPoints;
