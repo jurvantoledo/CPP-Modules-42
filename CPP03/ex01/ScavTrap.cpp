@@ -23,7 +23,7 @@ ScavTrap::~ScavTrap()
     std::cout << "Destructor is called" << std::endl;
 }
 
-ScavTrap::ScavTrap(const ClapTrap &old) : ClapTrap(old)
+ScavTrap::ScavTrap(const ScavTrap &old) : ClapTrap(old)
 {
     std::cout << "Copy constructor is called" << std::endl;
     this->name = old.name;

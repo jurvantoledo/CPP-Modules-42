@@ -24,7 +24,7 @@ FragTrap::~FragTrap()
     std::cout << "Destructor is called" << std::endl;
 }
 
-FragTrap::FragTrap(const ClapTrap &obj) : ClapTrap(obj)
+FragTrap::FragTrap(const FragTrap &obj) : ClapTrap(obj)
 {
     std::cout << "Copy constructor is called" << std::endl;
     this->name = obj.name;
