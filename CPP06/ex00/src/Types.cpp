@@ -126,19 +126,19 @@ void Types::ConvertTo()
 
     switch (type)
     {
-    case CHAR:
-        ToChar();
-        break;
-    case INT:
-        ToInt();
-        break;
-    case FLOAT:
-        ToFloat();
-        break;
-    case DOUBLE:
-        ToDouble();
-        break;
-    default:
-        break;
+        case CHAR:
+            ToChar();
+            break;
+        case INT:
+            ToInt();
+            break;
+        case FLOAT:
+            ToFloat();
+            break;
+        case DOUBLE:
+            ToDouble();
+            break;
+        default:
+            break;
     }
 }
