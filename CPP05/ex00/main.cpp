@@ -11,11 +11,11 @@ int main()
     }
     catch(Bureaucrat::GradeTooLowException &e)
     {
-        std::cerr << e.what() << '\n';
+        std::cerr << e.what() << std::endl;
     }
     catch(Bureaucrat::GradeTooHighException &e)
     {
-        std::cerr << e.what() << '\n';
+        std::cerr << e.what() << std::endl;
     }
     std::cout << std::endl;
 
@@ -28,11 +28,11 @@ int main()
     }
     catch(Bureaucrat::GradeTooLowException &e)
     {
-        std::cerr << e.what() << '\n';
+        std::cerr << e.what() << std::endl;
     }
     catch(Bureaucrat::GradeTooHighException &e)
     {
-        std::cerr << e.what() << '\n';
+        std::cerr << e.what() << std::endl;
     }
     std::cout << std::endl;
 
@@ -45,11 +45,11 @@ int main()
     }
     catch(Bureaucrat::GradeTooLowException &e)
     {
-        std::cerr << e.what() << '\n';
+        std::cerr << e.what() << std::endl;
     }
     catch(Bureaucrat::GradeTooHighException &e)
     {
-        std::cerr << e.what() << '\n';
+        std::cerr << e.what() << std::endl;
     }
     std::cout << std::endl;
     return (0);

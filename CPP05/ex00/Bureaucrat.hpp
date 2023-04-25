@@ -23,17 +23,11 @@ class Bureaucrat
 		{
 			public:
 				const char *what() const throw ();
-				//{
-				//	return "Grade is to low";
-				//}
 		};
         class GradeTooLowException : std::exception
 		{
 			public:
 				const char *what() const throw ();
-				//{
-				//	return "Grade is to low";
-				//}
 		};
 
     private:
