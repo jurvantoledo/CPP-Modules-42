@@ -28,7 +28,6 @@ ScalarConverter::~ScalarConverter()
 	std::cout << "ScalarConverter Destructor called" << std::endl;
 }
 
-
 int	ScalarConverter::getType()
 {
 	char	*end;
