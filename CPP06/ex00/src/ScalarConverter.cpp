@@ -1,4 +1,4 @@
-#include "ScalarConverter.hpp"
+#include "../include/ScalarConverter.hpp"
 
 ScalarConverter::ScalarConverter()
 {

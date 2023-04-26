@@ -1,4 +1,4 @@
-#include "ScalarConverter.hpp"
+#include "../include/ScalarConverter.hpp"
 
 std::string	ScalarConverter::_value = "";
 char	ScalarConverter::_char = '\0';
