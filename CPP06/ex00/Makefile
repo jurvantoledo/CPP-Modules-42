@@ -2,8 +2,8 @@ NAME = convert
 CC = c++
 CFLAGS = 
 
-SRC = 	./src/main.cpp \
-		./src/Types.cpp
+SRC = 	./main.cpp \
+		./ScalarConverter.cpp
 
 OBJ = $(SRC:%.cpp=%.o)
 
