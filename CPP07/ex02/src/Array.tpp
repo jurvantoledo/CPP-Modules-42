@@ -1,5 +1,4 @@
 #include "../include/Array.hpp"
-#include <cstdio>
 
 template<typename T>
 Array<T>::Array()

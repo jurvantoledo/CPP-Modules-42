@@ -1,6 +1,7 @@
 #ifndef ARRAY_H
 
 #define ARRAY_H
+#include "../src/Array.tpp"
 #include <iostream>
 #include <exception>
 #include <cstdio>
@@ -36,6 +37,5 @@ class Array
 template<typename T>
 std::ostream& operator << (std::ostream &o, const Array<T> &a);
 
-#include "../src/Array.tpp"
 
 #endif
