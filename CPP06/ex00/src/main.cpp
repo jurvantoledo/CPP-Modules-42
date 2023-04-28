@@ -12,8 +12,16 @@ int main(int argc, char *argv[])
 {
 	if (argc != 2)
 	{
-		std::cout << "Needs only 1 argument" <<std::endl;
-		return (EXIT_FAILURE);
+		if (argc < 2)
+		{
+			std::cout << "Needs 1 argument" <<std::endl;
+			return (EXIT_FAILURE);
+		}
+		else
+		{
+			std::cout << "Too many arguments" <<std::endl;
+			return (EXIT_FAILURE);
+		}
 	}
 	ScalarConverter::convert(argv[1]);
 	return (0);
