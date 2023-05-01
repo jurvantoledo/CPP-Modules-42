@@ -7,10 +7,7 @@
 class NoElementFound: public std::exception
 {
     public:
-        const char *what() const throw()
-        {
-            return ("Element not found");
-        }
+        const char *what() const throw();
 };
 
 template<typename T>
