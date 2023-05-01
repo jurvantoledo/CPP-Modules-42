@@ -1,7 +1,6 @@
 #ifndef ARRAY_H
 
 #define ARRAY_H
-#include "../src/Array.tpp"
 #include <iostream>
 #include <exception>
 #include <cstdio>
@@ -11,16 +10,8 @@ class Array
 {
     private:
         T *_array;
-        int _len;
+        unsigned int _len;
 
-        class IndexOutOfBoundsException : public std::exception
-        {
-            public:
-                const char *what() const throw()
-                {
-                    return ("Accessed index out of Array bounds");
-                }
-        };
         
     public:
         Array();
@@ -30,12 +21,18 @@ class Array
         ~Array();
 
         T&		operator[] (size_t i) const;
-        size_t  size();
+        unsigned int  size();
 
+        class IndexOutOfBoundsException : public std::exception
+        {
+            public:
+                const char *what() const throw();
+        };
 };
 
 template<typename T>
 std::ostream& operator << (std::ostream &o, const Array<T> &a);
 
+#include "../src/Array.tpp"
 
 #endif

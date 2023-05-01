@@ -4,14 +4,18 @@ template<typename T>
 Array<T>::Array()
 {
     this->_array = new T[0];
-    std::cout << "Default constructor is called" << std::endl;
 }
 
 template<typename T>
 Array<T>::Array(unsigned int n)
 {
     this->_array = new T[n];
-    std::cout << "Default constructor is called" << std::endl;
+    this->_len = n;
+
+    for (unsigned int i = 0; i < this->_len; i++)
+    {
+        this->_array[i] = T();
+    }
 }
 
 template<typename T>
@@ -26,13 +30,14 @@ template<typename T>
 Array<T>& Array<T>::operator=(const Array<T> &obj)
 {
     std::cout << "Copy assignment operator is called" << std::endl;
-    if (this != &obj)
+    if (this->_array)
     {
-        this->_len = obj.size();
-        this->_array = new T[this->_len];
-        for (size_t i = 0; i < obj.size(); i++)
-			this->_array[i] = obj[i];
+        delete[] this->_array;
     }
+    this->_len = obj._len;
+    this->_array = new T[this->_len];
+    for (unsigned int i = 0; i < this->_len; i++)
+		this->_array[i] = obj[i];
     return (*this);
 }
 
@@ -47,15 +52,21 @@ template<typename T>
 T& Array<T>::operator[] (size_t i) const
 {
     if (i >= this->_len)
-		throw(IndexOutOfBoundsException());
+        throw (IndexOutOfBoundsException());
     return(this->_array[i]);
     
 }
 
 template<typename T>
-size_t Array<T>::size(void)
+unsigned int Array<T>::size(void)
 {
     return (this->_len);
+}
+
+template<typename T>
+const char* Array<T>::IndexOutOfBoundsException::what(void) const throw()
+{
+	return "Index out of bounds";
 }
 
 template<typename T>
