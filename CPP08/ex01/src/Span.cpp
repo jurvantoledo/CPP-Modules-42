@@ -43,7 +43,7 @@ int Span::shortestSpan()
 
     std::sort(copy.begin(), copy.end());
 
-    return (copy.at(1) - copy.at(0));
+    return (copy.front());
 }
 
 int Span::longestSpan()
@@ -56,4 +56,14 @@ int Span::longestSpan()
     std::sort(copy.begin(), copy.end());
 
     return (copy.back());
+}
+
+const char* Span::ArrayOverflow::what(void) const throw() 
+{
+    return ("Overflow max size of array");
+}
+
+const char* Span::NotEnoughNumbers::what(void) const throw() 
+{
+    return ("Not enough numbers");
 }

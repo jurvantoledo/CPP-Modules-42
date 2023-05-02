@@ -20,23 +20,16 @@ class Span
         int shortestSpan();
         int longestSpan();
     
-    private:
         class ArrayOverflow: std::exception
         {
             public:
-                const char *what() const throw()
-                {
-                    return ("Overflow max size of array");
-                }
+                const char *what() const throw();
         };
 
         class NotEnoughNumbers: std::exception
         {
             public:
-                const char *what() const throw()
-                {
-                    return ("Not enough numbers");
-                }
+                const char *what() const throw();
         };
 };
 
