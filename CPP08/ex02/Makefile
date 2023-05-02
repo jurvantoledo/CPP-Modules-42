@@ -1,4 +1,4 @@
-NAME = span
+NAME = mutant
 CC = c++
 CFLAGS = 
 
