@@ -19,6 +19,10 @@ int main()
         {
             std::cerr << e.what() << '\n';
         }
+        catch(const Span::NotEnoughNumbers& e)
+        {
+            std::cerr << e.what() << '\n';
+        }
     }
     {
         Span s1 = Span(5);
@@ -37,6 +41,10 @@ int main()
         {
             std::cerr << e.what() << '\n';
         }
+        catch(const Span::NotEnoughNumbers& e)
+        {
+            std::cerr << e.what() << '\n';
+        }
     }
     {
         Span s1 = Span(5);
@@ -46,6 +54,10 @@ int main()
 
             std::cout << "Shortes span: " << s1.shortestSpan() << std::endl;
             std::cout << "Longest span: " << s1.longestSpan() << std::endl;    
+        }
+        catch(const Span::NotEnoughNumbers& e)
+        {
+            std::cerr << e.what() << '\n';
         }
         catch(const Span::NotEnoughNumbers& e)
         {
