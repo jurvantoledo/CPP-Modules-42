@@ -1,13 +1,20 @@
 #ifndef BITCOIN_EXCHANGE_H
 #define BITCOIN_EXCHANGE_H
+#include <iostream>
+#include <string>
+#include <vector>
+#include <fstream>
+#include <sstream>
 
 class BitcoinExchange
 {
 	private:
-		/* data */
+		std::string _file;
 	public:
-		BitcoinExchange(/* args */);
+		BitcoinExchange(std::string input);
 		~BitcoinExchange();
+
+		void	ReadFile();
 };
 
 #endif
