@@ -11,41 +11,65 @@ BitcoinExchange::~BitcoinExchange()
 	std::cout << "~Destructor is called" << std::endl;
 }
 
-void	BitcoinExchange::UseFile(std::vector<std::string> row)
+void	BitcoinExchange::ReadCSVFile()
 {
-	std::string line;
-	std::vector<std::string> value;
-	std::vector<std::string> date;
+	std::fstream csv_file;
+	std::string	line;
+	std::map<std::string, std::string> map;
 
-	for (size_t i = 0; i < row.size(); i++)
+	csv_file.open ("include/data.csv");
+	if (csv_file.is_open())
 	{
-		// line = row[i].
-		// date.push_back(line);
-	}
-	for (size_t i = 0; i < date.size(); i++)
-	{
-		std::cout << date[i] << std::endl;
-	}
+		while (csv_file)
+		{
+			std::getline(csv_file, line);
 
+		}
+	}
+	std::map<std::string, std::string>::iterator it = map.begin();
+	while (it != map.end())
+	{
+		std::cout << "Key: " << it->first << ", Value: " << it->second << std::endl;
+		++it;
+	}
 	
 }
 
-void	BitcoinExchange::ReadFile()
+void	BitcoinExchange::ReadTextFile()
 {
-	std::vector<std::string> row;
-	std::string line;
-	std::string word;
+	std::vector<std::string> valArray;
+	std::vector<std::string> dateArray;
+	std::string dates;
+	std::string value;
+	std::map<std::string, std::string> map;
 
 	std::ifstream o_file (this->_file);
 	if (o_file.is_open())
 	{
 		while (o_file)
 		{
-			std::getline(o_file, line);
-			row.push_back(line);
+			std::getline(o_file, dates, '\n');
+			std::size_t pos = dates.find("|");
+			if (pos == std::string::npos)
+			{
+				continue ;
+			}
+			value = dates.substr(pos + 1);
+			valArray.push_back(value);
+			dates = dates.substr(0, dates.find_first_of("|"));
+			dateArray.push_back(dates);
 		}
 	}
 	else
 		std::cout << "Could not open the file or file does not exist" << std::endl;
-	UseFile(row);
+	this->_valArr = valArray;
+	for (size_t i = 0; i < dateArray.size(); i++)
+	{
+		std::cout << "Dates: " << dateArray[i] << std::endl;
+	}
+	for (size_t i = 0; i < valArray.size(); i++)
+	{
+		std::cout << "Values: " << this->_valArr[i] << std::endl;
+	}
+	o_file.close();
 }

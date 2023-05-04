@@ -10,6 +10,7 @@ int main(int argc, char *argv[])
 	
 	BitcoinExchange bit(argv[1]);
 
-	bit.ReadFile();
+	bit.ReadTextFile();
+	bit.ReadCSVFile();
 	return (0);
 }
