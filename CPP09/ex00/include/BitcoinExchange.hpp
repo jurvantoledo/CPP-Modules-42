@@ -4,17 +4,18 @@
 #include <string>
 #include <vector>
 #include <fstream>
-#include <sstream>
 
 class BitcoinExchange
 {
 	private:
 		std::string _file;
+
 	public:
 		BitcoinExchange(std::string input);
 		~BitcoinExchange();
 
 		void	ReadFile();
+		void	UseFile(std::vector<std::string> row);
 };
 
 #endif
