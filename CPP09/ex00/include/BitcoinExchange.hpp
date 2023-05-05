@@ -5,6 +5,7 @@
 #include <vector>
 #include <fstream>
 #include <map>
+#include <sstream>
 
 class BitcoinExchange
 {
@@ -16,8 +17,9 @@ class BitcoinExchange
 		BitcoinExchange(std::string input);
 		~BitcoinExchange();
 
-		void	ReadTextFile();
-		void	ReadCSVFile();
+		std::vector<std::vector<std::string> >	ReadTextFile();
+		std::map<std::string, std::string>	ReadCSVFile();
+		void	CompareFiles();
 };
 
 #endif
