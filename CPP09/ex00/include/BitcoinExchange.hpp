@@ -12,14 +12,16 @@ class BitcoinExchange
 	private:
 		std::string _file;
 		std::vector<std::string> _valArr;
+		std::vector<std::string> _dateArr;
 
 	public:
 		BitcoinExchange(std::string input);
 		~BitcoinExchange();
 
-		std::vector<std::vector<std::string> >	ReadTextFile();
+		void	ReadTextFile();
 		std::map<std::string, std::string>	ReadCSVFile();
 		void	CompareFiles();
+		void	ValueChecks(std::string value);
 };
 
 #endif
