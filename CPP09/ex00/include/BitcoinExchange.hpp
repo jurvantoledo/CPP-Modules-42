@@ -2,6 +2,8 @@
 #define BITCOIN_EXCHANGE_H
 #include <iostream>
 #include <string>
+#include <cstring>
+#include <climits>
 #include <vector>
 #include <fstream>
 #include <map>
@@ -21,7 +23,9 @@ class BitcoinExchange
 		void	ReadTextFile();
 		std::map<std::string, std::string>	ReadCSVFile();
 		void	CompareFiles();
-		void	ValueChecks(std::string value);
+		int		ValueChecks(std::string value);
+		int		DateChecks(std::string dates);
+
 };
 
 #endif
