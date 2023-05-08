@@ -25,6 +25,8 @@ class BitcoinExchange
 		void	CompareFiles();
 		int		ValueChecks(std::string value);
 		int		DateChecks(std::string dates);
+		int		GetClosestDate(std::map<std::string, std::string> map, std::string &key);
+
 
 };
 

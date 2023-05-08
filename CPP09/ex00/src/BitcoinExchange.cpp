@@ -131,28 +131,36 @@ void BitcoinExchange::ReadTextFile()
 	o_file.close();
 }
 
+int	BitcoinExchange::GetClosestDate(std::map<std::string, std::string> map, std::string &key)
+{
+	std::map<std::string, std::string>::iterator it = map.begin();
+
+	for (it = map.begin(); it != map.end(); it++)
+	{
+		if (key.compare(it->first) == 0)
+		{
+			std::cout << it->first << " => " << it->second << " = " << atof(key.c_str()) * atof(it->second.c_str()) << std::endl;
+			return (1);
+		}
+		if (key.compare(it->first) < 0)
+		{
+			std::cout << it->first << " => " << it->second << " = " << atof(key.c_str()) * atof(it->second.c_str()) << std::endl;
+			return (2);
+		}
+	}
+	return (0);
+}
+
 void BitcoinExchange::CompareFiles()
 {
 	std::map<std::string, std::string> map;
-	int int_check = 0;
-	double val = 0;
 
 	map = ReadCSVFile();
-	std::map<std::string, std::string>::iterator it = map.begin();
-	while (it != map.end())
+	for (size_t i = 0; i < _dateArr.size(); i++)
 	{
-		for (size_t i = 0; i < _dateArr.size(); i++)
+		if (ValueChecks(this->_valArr[i]) != 0 && DateChecks(this->_dateArr[i]) != 0)
 		{
-			if (strcmp(it->first.c_str(), this->_dateArr[i].c_str()) == 0)
-			{
-				val = atof(this->_valArr[i].c_str()) * atof(it->second.c_str());
-				int_check = static_cast<int>(atoi(this->_valArr[i].c_str()));
-				if (int_check <= INT_MAX && ValueChecks(this->_valArr[i]) != 0 && DateChecks(this->_dateArr[i]) != 0)
-				{
-					std::cout << it->first << " => " << this->_valArr[i] << " = " << val << std::endl;
-				}
-			}
+				GetClosestDate(map, this->_dateArr[i]);
 		}
-		++it;
 	}
 }
