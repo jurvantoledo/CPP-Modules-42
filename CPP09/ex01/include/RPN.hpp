@@ -12,7 +12,7 @@ class RPN
 		RPN(std::string input);
 		~RPN();
 
-		void	CheckRPN();
+		int	CheckRPN();
 };
 
 #endif
