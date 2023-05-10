@@ -10,12 +10,12 @@ RPN::~RPN()
 
 const char* RPN::NoNumbersException::what(void) const throw()
 {
-	return "Error: The math aint mathing bro!";
+	return "Error";
 }
 
 const char* RPN::NumbersTooHighException::what(void) const throw()
 {
-	return "Error: The number is too high!";
+	return "Error";
 }
 
 int	RPN::CheckOperators(char c)
@@ -49,6 +49,7 @@ int RPN::CheckRPN()
 {
 	std::stack<int> stack;
 	int	res = 0;
+	int	num_count = 0;
 
 	if (_data.size() == 0)
 		throw (NoNumbersException());
@@ -65,11 +66,14 @@ int RPN::CheckRPN()
 				_data[i + 1] != '*' && _data[i + 1] != '/')
 				throw (NumbersTooHighException());
 			int num = _data[i] - '0';
+			num_count++;
 			stack.push(num);
 		}
 		else if (CheckOperators(_data[i]) \
 				&& !AmountOfNumbersAndOperators())
 		{
+			if (num_count <= 1)
+				throw (NoNumbersException());
 			int y = stack.top();
 			stack.pop();
 			int x = stack.top();
