@@ -40,7 +40,7 @@ int	RPN::AmountOfNumbersAndOperators()
 		if (CheckOperators(_data[i]))
 			count_operators++;
 	}
-	if (count_operators >= count_digits || count_operators == 0)
+	if (count_operators >= count_digits || count_operators == 0 || count_digits - 1 != count_operators)
 		return (1);
 	return (0);
 }
