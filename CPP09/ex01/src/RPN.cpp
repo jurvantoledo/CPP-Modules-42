@@ -8,25 +8,67 @@ RPN::~RPN()
 {
 }
 
+const char* RPN::NoNumbersException::what(void) const throw()
+{
+	return "Error: The math aint mathing bro!";
+}
+
+const char* RPN::NumbersTooHighException::what(void) const throw()
+{
+	return "Error: The number is too high!";
+}
+
+int	RPN::CheckOperators(char c)
+{
+	if (c == '*' || \
+		c  == '-' || \
+		c == '+' || \
+		c == '/')
+		return (1);
+	return (0);
+}
+
+int	RPN::AmountOfNumbersAndOperators()
+{
+	int	count_digits = 0;
+	int	count_operators = 0;
+
+	for (size_t i = 0; i < _data.size(); i++)
+	{
+		if (isdigit(_data[i]))
+			count_digits++;
+		if (CheckOperators(_data[i]))
+			count_operators++;
+	}
+	if (count_operators >= count_digits || count_operators == 0)
+		return (1);
+	return (0);
+}
+
 int RPN::CheckRPN()
 {
 	std::stack<int> stack;
 	int	res = 0;
 
+	if (_data.size() == 0)
+		throw (NoNumbersException());
+
 	for (size_t i = 0; i < _data.size(); i++)
 	{
 		if (isdigit(_data[i]))
 		{
-			if ((_data[i] >= '0' && _data[i] <= '9') && _data[i + 1] != ' ')
-			{
-				std::cout << "Number is too high!" << std::endl;
-				return (0);
-			}
+			if (AmountOfNumbersAndOperators())
+				throw (NoNumbersException());
+			if (_data[i] >= '0' && _data[i] <= '9' && \
+				_data[i + 1] != ' ' && \
+				_data[i + 1] != '+' && _data[i + 1] != '-' && \
+				_data[i + 1] != '*' && _data[i + 1] != '/')
+				throw (NumbersTooHighException());
 			int num = _data[i] - '0';
-			std::cout << num << std::endl;
 			stack.push(num);
 		}
-		else if (_data[i] == '*' || _data[i] == '-' || _data[i] == '+' || _data[i] == '/')
+		else if (CheckOperators(_data[i]) \
+				&& !AmountOfNumbersAndOperators())
 		{
 			int y = stack.top();
 			stack.pop();
@@ -50,16 +92,12 @@ int RPN::CheckRPN()
 				default:
 					break;
 			}
-			std::cout << res << std::endl;
 			stack.push(res);
 		}
 		else
 		{
 			if (!isspace(_data[i]))
-			{
-				std::cout << "The math aint mathing bro" << std::endl;
-				return (0);
-			}
+				throw(NoNumbersException());
 		}
 	}
 	return stack.top() ;
