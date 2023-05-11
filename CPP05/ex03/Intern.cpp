@@ -2,12 +2,12 @@
 
 Intern::Intern()
 {
-    std::cout << "Default constructors called" << std::endl;
+    std::cout << "Default Constructor called" << std::endl;
 }
 
 Intern::Intern(const Intern &obj)
 {
-    std::cout << "Copy constructors called" << std::endl;
+    std::cout << "Copy Constructor called" << std::endl;
     *this = obj;
 }
 
@@ -33,6 +33,8 @@ Form* Intern::makeForm(std::string formName, std::string target)
         "shrubbery"
     };
 
+    
+
     int i = 0;
     while (i < 3)
     {
@@ -42,22 +44,30 @@ Form* Intern::makeForm(std::string formName, std::string target)
         }
         i++;
     }
-    
+    if (i == 3)
+    {
+        throw InvalidArg();
+    }
     switch (i)
     {
-    case 0:
-        makeForm = new RobotomyRequestForm(target);
-        break;
-    case 1:
-        makeForm = new PresidentialPardonForm(target);
-        break;
-    case 2:
-        makeForm = new ShrubberyCreationForm(target);
-        break;
-    default:
-        break;
+        case 0:
+            makeForm = new RobotomyRequestForm(target);
+            break;
+        case 1:
+            makeForm = new PresidentialPardonForm(target);
+            break;
+        case 2:
+            makeForm = new ShrubberyCreationForm(target);
+            break;
+        default:
+            break;
     }
 
     std::cout << "Intern created " << formArray[i] << std::endl;
     return makeForm;
+}
+
+const char *Intern::InvalidArg::what(void) const throw() 
+{
+    return "Invalid name in Intern form!";
 }

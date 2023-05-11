@@ -9,11 +9,7 @@ int main()
         Bureaucrat jan("Jan", 25);
         std::cout << jan << std::endl;
     }
-    catch(Bureaucrat::GradeTooLowException &e)
-    {
-        std::cerr << e.what() << std::endl;
-    }
-    catch(Bureaucrat::GradeTooHighException &e)
+    catch(const std::exception &e)
     {
         std::cerr << e.what() << std::endl;
     }
@@ -26,11 +22,7 @@ int main()
         Bureaucrat jan("Jan", 151);
         std::cout << jan << std::endl;
     }
-    catch(Bureaucrat::GradeTooLowException &e)
-    {
-        std::cerr << e.what() << std::endl;
-    }
-    catch(Bureaucrat::GradeTooHighException &e)
+    catch(const std::exception &e)
     {
         std::cerr << e.what() << std::endl;
     }
@@ -43,11 +35,7 @@ int main()
         Bureaucrat jan("Jan", 0);
         std::cout << jan << std::endl;
     }
-    catch(Bureaucrat::GradeTooLowException &e)
-    {
-        std::cerr << e.what() << std::endl;
-    }
-    catch(Bureaucrat::GradeTooHighException &e)
+    catch(const std::exception &e)
     {
         std::cerr << e.what() << std::endl;
     }

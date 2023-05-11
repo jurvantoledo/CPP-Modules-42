@@ -4,12 +4,12 @@
 PresidentialPardonForm::PresidentialPardonForm(const std::string &target) : Form("PresidentialPardonForm", 25, 5), \
                                                                             _target(target)
 {
-    std::cout << "Default contstructor called" << std::endl;
+    std::cout << "Default Constructor called" << std::endl;
 }
 
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &obj) : Form(obj), _target(obj._target)
 {
-    std::cout << "Copy constructor is called" << std::endl;
+    std::cout << "Copy Constructor is called" << std::endl;
     *this = obj;
 }
 

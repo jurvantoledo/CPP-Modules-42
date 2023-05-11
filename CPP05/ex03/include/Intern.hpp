@@ -20,7 +20,7 @@ class Intern
 
         Form *makeForm(std::string formName, std::string target);
 
-		class InvalidArg : std::exception
+		class InvalidArg : public std::exception
 		{
 			public:
 				const char *what() const throw ();

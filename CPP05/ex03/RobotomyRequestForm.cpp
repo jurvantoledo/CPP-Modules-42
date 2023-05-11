@@ -5,12 +5,12 @@
 RobotomyRequestForm::RobotomyRequestForm(const std::string &target) : Form("RobotomyRequestForm", 72, 45), \
                                                                     _target(target)
 {
-    std::cout << "Default constructor called" << std::endl;
+    std::cout << "Default Constructor called" << std::endl;
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &obj) : Form(obj), _target(obj._target)
 {
-    std::cout << "Copy constructor is called" << std::endl;
+    std::cout << "Copy Constructor is called" << std::endl;
     *this = obj;
 }
 
@@ -51,6 +51,7 @@ void RobotomyRequestForm::execute(Bureaucrat const &executor)
          * which should be initialized to some distinctive value using function srand.
          * 
          */
+        std::cout << this->_target << " Makes some drilling noises." << std::endl;
         std::srand(time(NULL));
         if (std::rand() % 2)
         {
@@ -58,7 +59,7 @@ void RobotomyRequestForm::execute(Bureaucrat const &executor)
         }
         else
         {
-            std::cout << this->_target << " Makes some drilling noises." << std::endl;
+            std::cout << this->_target << " has failed failed tremendously." << std::endl;
         }
     }
     

@@ -4,7 +4,7 @@
 Form::Form(const std::string &inp_name, const int signGrade, const int execGrade) : \
             _name(inp_name),  _signGrade(signGrade), _execGrade(execGrade)
 {
-    std::cout << "Default constructor called" << std::endl;
+    std::cout << "Default Constructor called" << std::endl;
     if (execGrade < 1)
     {
         throw Form::GradeTooHighException();
@@ -18,7 +18,7 @@ Form::Form(const std::string &inp_name, const int signGrade, const int execGrade
 Form::Form(const Form &obj) : _name(obj._name), _sign(obj._sign), \
                              _signGrade(obj._signGrade), _execGrade(obj._execGrade)
 {
-    std::cout << "Copy constructor called" << std::endl;
+    std::cout << "Copy Constructor called" << std::endl;
     *this = obj;
 }
 
