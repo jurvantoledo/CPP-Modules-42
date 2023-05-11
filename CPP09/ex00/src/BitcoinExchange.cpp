@@ -4,7 +4,7 @@
 #include <cctype>
 #include <string>
 
-BitcoinExchange::BitcoinExchange(std::string input)
+BitcoinExchange::BitcoinExchange(char* input)
 {
 	std::cout << "Constructor is called" << std::endl;
 	this->_file = input;
@@ -73,9 +73,6 @@ int BitcoinExchange::ValueChecks(std::string value)
 // Thx Rolf :)
 int BitcoinExchange::DateChecks(std::string dates)
 {
-	char	*newChar = strdup(dates.c_str());
-	char *splitted_dates;
-
 	if (dates.size() > 10)
 		return (0);
     struct tm tm;
@@ -95,14 +92,14 @@ int BitcoinExchange::DateChecks(std::string dates)
 
 void BitcoinExchange::ReadTextFile()
 {
-	std::vector<std::string> valArray;
-	std::vector<std::string> dateArray;
+	std::fstream o_file;
 	std::string lines;
 	std::string dates;
 	std::string value;
 	std::map<std::string, std::string> map;
 
-	std::fstream o_file(this->_file);
+	map = ReadCSVFile();
+	o_file.open(this->_file);
 	if (o_file.is_open())
 	{
 		while (o_file)
@@ -115,19 +112,18 @@ void BitcoinExchange::ReadTextFile()
 			{
 				value = lines.substr(pos + 1);
 			}
-			valArray.push_back(value);
 
 			dates = lines.substr(0, lines.find_first_of("|"));
 			if (static_cast<long>(atol(dates.c_str())) == 0)
 				continue;
-			dateArray.push_back(dates);
+			if (ValueChecks(value) != 0 && DateChecks(dates))
+			{
+					GetClosestDate(map, dates);
+			}
 		}
 	}
 	else
 		std::cout << "Could not open the file or file does not exist" << std::endl;
-
-	this->_valArr = valArray;
-	this->_dateArr = dateArray;
 	o_file.close();
 }
 

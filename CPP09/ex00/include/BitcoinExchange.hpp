@@ -12,12 +12,12 @@
 class BitcoinExchange
 {
 	private:
-		std::string _file;
+		char* _file;
 		std::vector<std::string> _valArr;
 		std::vector<std::string> _dateArr;
 
 	public:
-		BitcoinExchange(std::string input);
+		BitcoinExchange(char* input);
 		~BitcoinExchange();
 
 		void	ReadTextFile();
