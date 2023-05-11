@@ -15,7 +15,7 @@ void    PmergeMe::swap(int& val1, int &val2)
     val1 = val2;
     val2 = temp;
 }
-
+ 
 // So min_idx will swap the index of the smallest number at that point with the index of bigger numbers
 // when the value of the min_idx is smaller than the value of the current index
 void    PmergeMe::sort(std::vector<int> vec)
