@@ -10,6 +10,9 @@ class PmergeMe
 	public:
 		PmergeMe();
 		~PmergeMe();
+
+		void	swap(int& val1, int& val2);
+		void	sort(std::vector<int> vec);
 };
 
 #endif
