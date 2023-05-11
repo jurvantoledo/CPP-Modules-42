@@ -30,7 +30,7 @@ class AForm
         virtual void execute(Bureaucrat const &executor) = 0;
 
         // Exception functions
-        class GradeTooHighException : std::exception
+        class GradeTooHighException : public std::exception
 		{
 			public:
 				const char *what() const throw ()
@@ -38,7 +38,7 @@ class AForm
                     return ("Grade is too high!");
                 }
 		};
-        class GradeTooLowException : std::exception
+        class GradeTooLowException : public std::exception
 		{
 			public:
 				const char *what() const throw ()

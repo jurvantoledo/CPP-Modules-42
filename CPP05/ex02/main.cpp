@@ -10,19 +10,17 @@ int main()
     std::cout << std::endl;
     try
     {
+        std::cout << std::endl;
         Bureaucrat jan("Jan", 4);
-        PresidentialPardonForm pres("De niet baas");
+        PresidentialPardonForm pres("Shit man");
         std::cout << std::endl;
         jan.signForm(pres);
         jan.executeForm(pres);
+        std::cout << std::endl;
     }
-    catch(AForm::GradeTooLowException& e)
+    catch(const std::exception& e)
     {
         std::cerr << e.what() << '\n';
-    }
-    catch (AForm::GradeTooHighException& e) 
-    {
-        std::cerr << e.what() << std::endl;
     }
     std::cout << std::endl;
     std::cout << "<< --------------------------------------- >>" << std::endl;
@@ -34,16 +32,12 @@ int main()
         std::cout << std::endl;
         kees.signForm(robot);
         kees.executeForm(robot);
+        std::cout << std::endl;
     }
-    catch(AForm::GradeTooLowException& e)
+    catch(const std::exception& e)
     {
         std::cerr << e.what() << '\n';
     }
-    catch (AForm::GradeTooHighException& e) 
-    {
-        std::cerr << e.what() << std::endl;
-    }
-    std::cout << std::endl;
     std::cout << "<< --------------------------------------- >>" << std::endl;
     std::cout << std::endl;
     std::cout << "<< --------------------------------------- >>" << std::endl;
@@ -55,15 +49,11 @@ int main()
         std::cout << std::endl;
         henk.signForm(shrub);
         henk.executeForm(shrub);
+        std::cout << std::endl;
     }
-    catch(AForm::GradeTooLowException& e)
+    catch(const std::exception& e)
     {
         std::cerr << e.what() << '\n';
     }
-    catch (AForm::GradeTooHighException& e) 
-    {
-        std::cerr << e.what() << std::endl;
-    }
-    std::cout << std::endl;
     return (0);
 }

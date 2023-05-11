@@ -29,6 +29,7 @@ void RobotomyRequestForm::execute(Bureaucrat const &executor)
 {
     if (executor.getGrade() <= this->getExecutedGrade())
     {
+        std::cout << this->_target << " Makes some drilling noises." << std::endl;
         std::srand(time(NULL));
         if (std::rand() % 2)
         {
@@ -36,7 +37,7 @@ void RobotomyRequestForm::execute(Bureaucrat const &executor)
         }
         else
         {
-            std::cout << this->_target << " Makes some drilling noises." << std::endl;
+            std::cout << this->_target << " has failed failed tremendously." << std::endl;
         }
     }
     

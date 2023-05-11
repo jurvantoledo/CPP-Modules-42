@@ -23,21 +23,15 @@ class Bureaucrat
         void executeForm(AForm &form);
 
         // Exception functions
-        class GradeTooHighException : std::exception
+        class GradeTooHighException : public std::exception
 		{
 			public:
 				const char *what() const throw ();
-				//{
-				//	return "Grade is to low";
-				//}
 		};
-        class GradeTooLowException : std::exception
+        class GradeTooLowException : public std::exception
 		{
 			public:
 				const char *what() const throw ();
-				//{
-				//	return "Grade is to low";
-				//}
 		};
 
     private:

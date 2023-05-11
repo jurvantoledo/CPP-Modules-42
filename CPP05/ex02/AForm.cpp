@@ -5,6 +5,7 @@ AForm::AForm(const std::string &inp_name, const int signGrade, const int execGra
             _name(inp_name),  _signGrade(signGrade), _execGrade(execGrade)
 {
     std::cout << "Default constructor called" << std::endl;
+    this->_sign = false;
     if (execGrade < 1)
     {
         throw AForm::GradeTooHighException();
@@ -25,7 +26,7 @@ AForm::AForm(const AForm &obj) : _name(obj._name), _sign(obj._sign), \
 AForm& AForm::operator=(const AForm &obj)
 {
     std::cout << "Copy assignment operator is called" << std::endl;
-    (void)&obj;
+    _sign = obj._sign;
     return (*this);
 }
 
