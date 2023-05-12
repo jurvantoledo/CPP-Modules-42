@@ -19,8 +19,8 @@ int	main(int argc, char *argv[])
 	try
 	{
 		PmergeMe pmerge;
-		
-		pmerge.fillArr(vec, argv);
+
+		pmerge.fillVector(vec, argv);
 		std::cout << "Given array is \n";
 		printArray(vec);
 	
@@ -31,6 +31,7 @@ int	main(int argc, char *argv[])
 	}
 	catch(const std::exception& e)
 	{
+		std::cout << "Error: ";
 		std::cerr << e.what() << '\n';
 	}
 	return (0);

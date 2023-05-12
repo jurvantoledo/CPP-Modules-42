@@ -10,7 +10,12 @@ PmergeMe::~PmergeMe()
 
 const char* PmergeMe::NotANumberException::what(void) const throw()
 {
-    return "One of the values is not a number";
+    return "One of the values is not a number!";
+}
+
+const char* PmergeMe::NotAPositiveNumberException::what(void) const throw()
+{
+    return "Value is not a positive number!";
 }
 
 int PmergeMe::CheckArguments(char *argv[])
@@ -78,7 +83,7 @@ void    PmergeMe::mergeSort(std::vector<int> &vec, size_t begin, size_t end)
     merge(vec, begin, mid, end);
 }
 
-void    PmergeMe::fillArr(std::vector<int> &vec, char *argv[])
+void    PmergeMe::fillVector(std::vector<int> &vec, char *argv[])
 {
     size_t num = 0;
     for (size_t i = 1; argv[i]; i++)
