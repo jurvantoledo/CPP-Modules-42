@@ -1,15 +1,9 @@
 #include "../include/PmergeMe.hpp"
 
-void	printArray(std::vector<int> vec)
-{
-	for (size_t i = 0; i < vec.size(); i++)
-		std::cout << vec[i] << ' ';
-	std::cout << std::endl;
-}
-
 int	main(int argc, char *argv[])
 {
     std::vector<int> vec;
+	std::deque<int> deck;
 
 	if (argc < 2)
 	{
@@ -19,15 +13,24 @@ int	main(int argc, char *argv[])
 	try
 	{
 		PmergeMe pmerge;
+		PmergeMe pmergeDeque;
 
 		pmerge.fillVector(vec, argv);
-		std::cout << "Given array is \n";
-		printArray(vec);
-	
+		pmerge.fillDeque(deck, argv);
+		std::cout << "Given array is: " << std::endl;
+		std::cout << "Vector: "; 
+		pmerge.printVectorArray(vec);
+		std::cout << "Deque: ";
+		pmergeDeque.printDequeArray(deck);	
+
 		pmerge.mergeSort(vec, 0, vec.size() - 1);
+		pmergeDeque.mergeSortDeque(deck, 0, deck.size() - 1);
 	
-		std::cout << "\nSorted array is \n";
-		printArray(vec);
+		std::cout << "\nSorted array is" << std::endl;
+		std::cout << "Vector: "; 
+		pmerge.printVectorArray(vec);
+		std::cout << "Deque: ";
+		pmergeDeque.printDequeArray(deck);	
 	}
 	catch(const std::exception& e)
 	{
