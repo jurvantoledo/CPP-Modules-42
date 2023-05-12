@@ -2,7 +2,7 @@
 #include "./include/Bureaucrat.hpp"
 #include <fstream>
 
-ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target) : Form("ShrubberyCreationForm", 145, 137), \
+ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target) : Form("ShrubberyCreationForm", 145, 148), \
                                                                         _target(target)
 {
     std::cout << "Default Constructor is called" << std::endl;
@@ -30,7 +30,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor)
 {
     std::ofstream out;
     std::string outfileName = this->_target + "_shrubbery";
-    out.open(outfileName);
+    out.open(outfileName.c_str());
     if (!out)
     {
         std::cout << "Cannot create outfile" << std::endl;

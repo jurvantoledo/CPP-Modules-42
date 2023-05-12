@@ -2,6 +2,7 @@
 
 #define ROBOT_REQUEST_FORM_H
 #include <iostream>
+#include <stdlib.h>
 #include "Form.hpp"
 
 class Bureaucrat;

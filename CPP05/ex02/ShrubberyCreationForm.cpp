@@ -30,7 +30,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor)
 {
     std::ofstream out;
     std::string outfileName = this->_target + "_shrubbery";
-    out.open(outfileName);
+    out.open(outfileName.c_str());
     if (!out)
     {
         std::cout << "Cannot create outfile" << std::endl;

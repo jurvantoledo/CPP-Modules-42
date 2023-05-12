@@ -26,7 +26,7 @@ class AForm
         bool isSigned() const;
 
         // Public Member functions
-        void beSigned(Bureaucrat &bureau);
+        void beSigned(const Bureaucrat &bureau);
         virtual void execute(Bureaucrat const &executor) = 0;
 
         // Exception functions

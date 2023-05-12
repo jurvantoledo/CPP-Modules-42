@@ -5,11 +5,6 @@
 #include "./include/Form.hpp"
 #include "./include/Intern.hpp"
 
-void    f()
-{
-    system("leaks bureau");
-}
-
 int main()
 {
     std::cout << "<< ---------- BUREAUCRAT ---------- >>" << std::endl;
@@ -30,6 +25,8 @@ int main()
         std::cerr << e.what() << '\n';
     }
 
+    std::cout << std::endl;
+    std::cout << "<< ---------- BUREAUCRAT ---------- >>" << std::endl;
     try
     {
         Intern two;
@@ -37,6 +34,28 @@ int main()
         Form* form2;
         std::cout << std::endl;
         form2 = two.makeForm("presidential", "The boss man");
+        std::cout << std::endl;
+        kees.signForm(*form2);
+        kees.executeForm(*form2);
+        std::cout << std::endl;
+        delete form2;
+    }
+    catch(const std::exception& e)
+    {
+        std::cout << std::endl;
+        std::cerr << e.what() << '\n';
+    }
+
+    
+    std::cout << std::endl;
+    std::cout << "<< ---------- BUREAUCRAT WITH INVALID GRADE ---------- >>" << std::endl;
+    try
+    {
+        Intern two;
+        Bureaucrat kees("Kees", 149);
+        Form* form2;
+        std::cout << std::endl;
+        form2 = two.makeForm("shrubbery", "The boss man");
         std::cout << std::endl;
         kees.signForm(*form2);
         kees.executeForm(*form2);

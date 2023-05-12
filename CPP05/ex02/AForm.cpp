@@ -55,7 +55,7 @@ bool AForm::isSigned() const
     return (this->_sign);
 }
 
-void AForm::beSigned(Bureaucrat &bureau)
+void AForm::beSigned(const Bureaucrat &bureau)
 {
     if (bureau.getGrade() <= this->getGradeSign())
     {
