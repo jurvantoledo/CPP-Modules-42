@@ -3,30 +3,35 @@
 void	printArray(std::vector<int> vec)
 {
 	for (size_t i = 0; i < vec.size(); i++)
-	{
 		std::cout << vec[i] << ' ';
-	}
 	std::cout << std::endl;
 }
 
 int	main(int argc, char *argv[])
 {
-	PmergeMe pmerge;
-	std::vector<int> vec;
-	int	num = 0;
+    std::vector<int> vec;
 
 	if (argc < 2)
 	{
 		std::cout << "Are you dumb? Use more arguments!" << std::endl;
 		return (0);
 	}
-
-	for (size_t i = 1; argv[i]; i++)
+	try
 	{
-		num = atoi(argv[i]);
-		vec.push_back(num);
+		PmergeMe pmerge;
+		
+		pmerge.fillArr(vec, argv);
+		std::cout << "Given array is \n";
+		printArray(vec);
+	
+		pmerge.mergeSort(vec, 0, vec.size() - 1);
+	
+		std::cout << "\nSorted array is \n";
+		printArray(vec);
 	}
-	std::cout << "Before: ";
-	printArray(vec);
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
 	return (0);
 }
