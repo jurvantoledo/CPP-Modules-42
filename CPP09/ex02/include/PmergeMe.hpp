@@ -1,8 +1,10 @@
 #ifndef PMERGE_H
 #define PMERGE_H
+#include <iomanip>
 #include <iostream>
 #include <vector>
 #include <deque>
+#include <sys/time.h>
 
 class PmergeMe
 {
@@ -23,15 +25,20 @@ class PmergeMe
 		void	fillDeque(std::deque<int> &deque, char *argv[]);
 		
 		// Check functions
-		void	printVectorArray(std::vector<int> &vec);
-		void	printDequeArray(std::deque<int> &deque);
-		int		CheckArguments(char *argv[]);
+		void			printVectorArray(std::vector<int> &vec);
+		void			printDequeArray(std::deque<int> &deque);
+		int				CheckArguments(char *argv);
+		unsigned int	validate(int size, char *argv[]);
 
 		class NotANumberException : public std::exception {
 			const char* what() const throw();
 		};
 
 		class NotAPositiveNumberException : public std::exception {
+			const char* what() const throw();
+		};
+
+		class DuplicateNumberException : public std::exception {
 			const char* what() const throw();
 		};
 };

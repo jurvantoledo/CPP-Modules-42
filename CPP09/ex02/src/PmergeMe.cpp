@@ -8,6 +8,11 @@ PmergeMe::~PmergeMe()
 {
 }
 
+const char* PmergeMe::DuplicateNumberException::what(void) const throw()
+{
+    return "Duplicate number found!";
+}
+
 const char* PmergeMe::NotANumberException::what(void) const throw()
 {
     return "One of the values is not a number!";
@@ -32,17 +37,35 @@ void	PmergeMe::printDequeArray(std::deque<int> &deque)
 	std::cout << std::endl;
 }
 
-int PmergeMe::CheckArguments(char *argv[])
+int PmergeMe::CheckArguments(char *argv)
 {
-    for (size_t i = 1; argv[i]; i++)
+    for (size_t i = 0; argv[i]; i++)
 	{
-        for (size_t j = 0; argv[i][j]; j++)
-        {
-            if (!isdigit(argv[i][j]))
-                return (1);
-        }
+         if (!isdigit(argv[i]))
+            return (1);
 	}
     return (0);
+}
+
+unsigned int    PmergeMe::validate(int size, char *argv[])
+{
+    std::vector<int> check;
+
+    for (int i = 0; i < size; i++)
+    {
+        if (atoi(argv[i + 1]) < 0)
+            throw NotAPositiveNumberException();
+        if (CheckArguments(argv[i + 1]) == 1)
+            throw NotANumberException();
+        check.push_back(atoi(argv[i + 1]));
+    }
+    std::sort(check.begin(), check.end());
+    for (unsigned long i = 0; i < check.size() - 1; i++)
+    {
+        if (check[i] == check[i + 1])
+            throw DuplicateNumberException();
+    }
+    return check.size();
 }
 
 void    PmergeMe::merge(std::vector<int> &vec, size_t left, size_t mid, size_t right)
@@ -154,8 +177,6 @@ void    PmergeMe::fillVector(std::vector<int> &vec, char *argv[])
     size_t num = 0;
     for (size_t i = 1; argv[i]; i++)
 	{
-        if (CheckArguments(argv) == 1)
-            throw NotANumberException();
 		num = atoi(argv[i]);
 		vec.push_back(num);
 	}
@@ -167,8 +188,6 @@ void    PmergeMe::fillDeque(std::deque<int> &deque, char *argv[])
     size_t num = 0;
     for (size_t i = 1; argv[i]; i++)
 	{
-        if (CheckArguments(argv) == 1)
-            throw NotANumberException();
 		num = atoi(argv[i]);
 		deque.push_back(num);
 	}
