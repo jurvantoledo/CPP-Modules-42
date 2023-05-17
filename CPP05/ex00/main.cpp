@@ -16,7 +16,7 @@ int main()
     std::cout << std::endl;
 
     std::cout << std::endl;
-    std::cout << "<< ---------- BUREAUCRAT WITH TOO HIGH INVALID GRADE ---------- >>" << std::endl;
+    std::cout << "<< ---------- BUREAUCRAT WITH TOO LOW INVALID GRADE ---------- >>" << std::endl;
     try
     {
         Bureaucrat jan("Jan", 151);
@@ -29,7 +29,7 @@ int main()
     std::cout << std::endl;
 
     std::cout << std::endl;
-    std::cout << "<< ---------- BUREAUCRAT WITH TOO LOW INVALID GRADE ---------- >>" << std::endl;
+    std::cout << "<< ---------- BUREAUCRAT WITH TOO HIGH INVALID GRADE ---------- >>" << std::endl;
     try
     {
         Bureaucrat jan("Jan", 0);
