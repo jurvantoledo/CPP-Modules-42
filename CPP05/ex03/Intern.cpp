@@ -33,8 +33,6 @@ Form* Intern::makeForm(std::string formName, std::string target)
         "shrubbery"
     };
 
-    
-
     int i = 0;
     while (i < 3)
     {

@@ -26,7 +26,7 @@ class Form
         bool isSigned() const;
 
         // Public Member functions
-        void beSigned(Bureaucrat &bureau);
+        void beSigned(const Bureaucrat &bureau);
 
         // Exception functions
         class GradeTooHighException : public std::exception
