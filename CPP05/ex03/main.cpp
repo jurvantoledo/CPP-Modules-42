@@ -52,10 +52,10 @@ int main()
     try
     {
         Intern two;
-        Bureaucrat kees("Kees", 149);
+        Bureaucrat kees("Kees", 146);
         Form* form2;
         std::cout << std::endl;
-        form2 = two.makeForm("shrubbery", "The boss man");
+        form2 = two.makeForm("shrubbery", "trees");
         std::cout << std::endl;
         kees.signForm(*form2);
         kees.executeForm(*form2);
