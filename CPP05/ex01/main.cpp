@@ -12,9 +12,9 @@ int main()
             Form form1("Form 1", 50, 100);
             std::cout << std::endl;
             std::cout << jan << std::endl; 
+            jan.signForm(form1);
             std::cout << form1 << std::endl;
 
-            jan.signForm(form1);
             std::cout << std::endl << std::endl;
         }
         catch(const std::exception &e)
@@ -32,9 +32,9 @@ int main()
             Form form2("Form 2", 40, 100);
             std::cout << std::endl;
             std::cout << kees << std::endl; 
+            kees.signForm(form2);
             std::cout << form2 << std::endl;
 
-            kees.signForm(form2);
             std::cout << std::endl << std::endl;
         }
         catch(const std::exception &e)
