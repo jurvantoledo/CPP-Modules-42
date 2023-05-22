@@ -53,14 +53,14 @@ int main()
     {
         Intern two;
         Bureaucrat kees("Kees", 146);
-        Form* form2;
+        Form* form3;
         std::cout << std::endl;
-        form2 = two.makeForm("shrubbery", "trees");
+        form3 = two.makeForm("shrubbery", "trees");
         std::cout << std::endl;
-        kees.signForm(*form2);
-        kees.executeForm(*form2);
+        kees.signForm(*form3);
+        kees.executeForm(*form3);
         std::cout << std::endl;
-        delete form2;
+        delete form3;
     }
     catch(const std::exception& e)
     {
