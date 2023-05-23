@@ -13,13 +13,13 @@ int main()
     std::cout << "------------ DATA -----------" << std::endl;
 	std::cout << "Name: " << data.name << std::endl;
     std::cout << "Number: " << data.number << std::endl;
-    std::cout << "address: " << &data << std::endl;
+    std::cout << "Address: " << &data << std::endl;
     std::cout << std::endl;
 
 	uintptr_t	serialized = Serializer::serialize(&data);
 	std::cout << "serialized   : " << serialized << " ( 0x" << std::hex << serialized << " )" << std::endl;
-
-	Data*		deserialized = Serializer::deserialize(serialized);
+	
+    Data*		deserialized = Serializer::deserialize(serialized);
 	std::cout << "deserialized : " << deserialized << std::endl;
     return (0);
 }
