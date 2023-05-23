@@ -1,6 +1,6 @@
 NAME = identify
 CC = c++
-CFLAGS = 
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC = 	./src/main.cpp \
 		./src/Base.cpp

@@ -1,6 +1,6 @@
 NAME = convert
 CC = c++
-CFLAGS = 
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC = 	./src/main.cpp \
 		./src/ScalarConverter.cpp

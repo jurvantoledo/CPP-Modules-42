@@ -84,22 +84,13 @@ void identify(Base& p)
 int main()
 {
     Base* random = generate();
-    std::cout << "Pointer Cast" << std::endl; 
-    std::cout << "Detected class: " << std::endl;
+    std::cout << "Pointer Cast: "; 
     identify(random);
-    std::cout << "Reference Cast" << std::endl; 
-    std::cout << "Detected class: " << std::endl;
-    identify(*random);
-    delete random;
+    std::cout << std::endl;
 
-    random = generate();
-    std::cout << "Pointer Cast" << std::endl; 
-    std::cout << "Detected class: " << std::endl;
-    identify(random);
-    std::cout << "Reference Cast" << std::endl; 
-    std::cout << "Detected class: " << std::endl;
+    std::cout << "Reference Cast: "; 
     identify(*random);
+    std::cout << std::endl;
     delete random;
-
     return (0);
 }

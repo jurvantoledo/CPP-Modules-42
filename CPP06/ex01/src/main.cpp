@@ -1,4 +1,4 @@
-#include "../include/Data.hpp"
+#include "../include/Serializer.hpp"
 
 /**
  * @brief reinterpret_cast 
@@ -6,38 +6,20 @@
  * or converts between pointers and their numerical (integer) values.
  */
 
-uintptr_t serialize(Data* ptr)
-{
-    uintptr_t new_ptr = reinterpret_cast<uintptr_t>(ptr);
-    return (new_ptr);
-}
-
-Data* deserialize(uintptr_t raw)
-{
-    Data* new_prt = reinterpret_cast<Data*>(raw);
-    return (new_prt);
-}
-
 int main()
 {
-    Data data;
-    Data *ptr = &data;
-
-    uintptr_t serialized = serialize(ptr);
-    Data* deserialized = deserialize(serialized);
-
+    Data data = {.name = "Naam", .number = 400};
     std::cout << std::endl;
-    std::cout << "TEST Serialized" << std::endl;
-    std::cout << "uintptr ptr: " << &serialized << std::endl;
-    std::cout << "uintptr: " << serialized << std::endl;
+    std::cout << "------------ DATA -----------" << std::endl;
+	std::cout << "Name: " << data.name << std::endl;
+    std::cout << "Number: " << data.number << std::endl;
+    std::cout << "address: " << &data << std::endl;
     std::cout << std::endl;
 
-    std::cout << std::endl;
-    std::cout << "TEST Desirialized" << std::endl;
-    std::cout << &deserialized << std::endl;
-    std::cout << deserialized << std::endl;
-    deserialized->test();
-    std::cout << std::endl;
-    
+	uintptr_t	serialized = Serializer::serialize(&data);
+	std::cout << "serialized   : " << serialized << " ( 0x" << std::hex << serialized << " )" << std::endl;
+
+	Data*		deserialized = Serializer::deserialize(serialized);
+	std::cout << "deserialized : " << deserialized << std::endl;
     return (0);
 }
