@@ -1,5 +1,5 @@
 #include "../include/Array.hpp"
-#define MAX_VAL 750
+#define MAX_VAL 50
 
 int main()
 {
@@ -26,16 +26,23 @@ int main()
             return 1;
         }
     }
+
     try
     {
+        std::cout << std::endl;
+        std::cout << "-------------------- TEST 1 ---------------------" << std::endl;
         numbers[2] = 0;
+        std::cout << numbers[2] << std::endl;
     }
     catch(const Array<int>::IndexOutOfBoundsException& e)
     {
         std::cerr << e.what() << '\n';
     }
+
     try
     {
+        std::cout << std::endl;
+        std::cout << "-------------------- TEST 2 ---------------------" << std::endl;
         numbers[MAX_VAL] = 0;
     }
     catch(const Array<int>::IndexOutOfBoundsException& e)
@@ -43,9 +50,13 @@ int main()
         std::cerr << e.what() << '\n';
     }
 
+    std::cout << std::endl;
+    std::cout << "-------------------- TEST 3 ---------------------" << std::endl;
     for (int i = 0; i < MAX_VAL; i++)
     {
         numbers[i] = rand();
+
+        std::cout << numbers[i] << std::endl;
     }
     delete [] mirror;
     return 0;

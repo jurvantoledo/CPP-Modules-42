@@ -4,7 +4,7 @@
 int main()
 {
     int arr[] = {0, 1, 2, 3, 4};
-    int len = std::end(arr)- std::begin(arr);
+    int len = std::end(arr) - std::begin(arr);
 
     ::iter(arr, len, &call);
     
