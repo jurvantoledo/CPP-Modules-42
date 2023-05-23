@@ -60,6 +60,7 @@ void identify(Base& p)
 	{
 		e.what();
 	}
+    
 	try
 	{
 		(void)dynamic_cast<B&>(p);
@@ -69,6 +70,7 @@ void identify(Base& p)
 	{
 		e.what();
 	}
+
 	try
 	{
 		(void)dynamic_cast<C&>(p);
