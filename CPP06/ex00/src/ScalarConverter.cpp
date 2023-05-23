@@ -132,8 +132,6 @@ void ScalarConverter::DisplayInt()
 	{
 		std::cout << "impossible" << std::endl;
 	}
-	else if (getType() == INVALID)
-		std::cout << "NaN" << std::endl; 
 	else
 		std::cout << _int << std::endl;
 }
