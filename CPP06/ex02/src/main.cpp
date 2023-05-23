@@ -11,7 +11,6 @@
  * dynamic_cast casts up and down class hierarchies only,
  * it is always checking that the conversion requested is valid.
  */
-
 Base * generate(void)
 {
     int	seed = std::chrono::system_clock::now().time_since_epoch().count();
@@ -91,6 +90,7 @@ int main()
     std::cout << "Reference Cast" << std::endl; 
     std::cout << "Detected class: " << std::endl;
     identify(*random);
+    delete random;
 
     random = generate();
     std::cout << "Pointer Cast" << std::endl; 
@@ -99,6 +99,7 @@ int main()
     std::cout << "Reference Cast" << std::endl; 
     std::cout << "Detected class: " << std::endl;
     identify(*random);
+    delete random;
 
     return (0);
 }
