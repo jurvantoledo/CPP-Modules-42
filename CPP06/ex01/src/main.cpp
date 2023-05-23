@@ -8,7 +8,7 @@
 
 int main()
 {
-    Data data = {.name = "Naam", .number = 400};
+    Data data = {.name = "Naam", .number = 10};
     std::cout << std::endl;
     std::cout << "------------ DATA -----------" << std::endl;
 	std::cout << "Name: " << data.name << std::endl;
