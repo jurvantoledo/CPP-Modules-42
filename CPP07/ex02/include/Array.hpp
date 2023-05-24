@@ -2,7 +2,6 @@
 
 #define ARRAY_H
 #include <iostream>
-#include <exception>
 #include <cstdio>
 
 template<typename T>
