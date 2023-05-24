@@ -14,11 +14,7 @@ int main()
         std::cout << "Shortes span: " << s1.shortestSpan() << std::endl;
         std::cout << "Longest span: " << s1.longestSpan() << std::endl;    
     }
-    catch(const Span::ArrayOverflow& e)
-    {
-        std::cerr << e.what() << '\n';
-    }
-    catch (const Span::NotEnoughNumbers& e) 
+    catch(const std::exception& e)
     {
         std::cerr << e.what() << '\n';
     }

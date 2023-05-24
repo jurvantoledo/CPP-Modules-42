@@ -32,6 +32,7 @@ class ScalarConverter {
 		
 		static int	getType();
 		static void	printTypes();
+		static bool	checkChar(std::string val);
 
 		// Convert Functions
 		static void ConvertChar();

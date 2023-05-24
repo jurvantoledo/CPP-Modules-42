@@ -28,6 +28,15 @@ ScalarConverter::~ScalarConverter()
 	std::cout << "ScalarConverter Destructor called" << std::endl;
 }
 
+bool	ScalarConverter::checkChar(std::string val)
+{
+	int len = val.length();
+
+	if (val[len - 1] == 'f')
+		return (true);
+	return (false);
+}
+
 int	ScalarConverter::getType()
 {
 	char	*end;
@@ -43,7 +52,7 @@ int	ScalarConverter::getType()
 	// string to float
 	std::strtof(_value.c_str(), &end);
 	if (*end == '\0' || _value.compare("-inff") == 0 || _value.compare("inff") == 0 \
-		|| _value.compare("nanf") == 0)
+		|| _value.compare("nanf") == 0 || checkChar(_value) == true)
 		return (FLOAT);
 
 	// string to double
