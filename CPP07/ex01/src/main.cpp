@@ -7,6 +7,11 @@ int main()
     int len = std::end(arr) - std::begin(arr);
 
     ::iter(arr, len, &call);
+
+	char str[] = "Hello EverYone!";
+    std::cout << std::endl;
+    ::iter(str, strlen(str), &call);
+    std::cout << std::endl;
     
     return 0;
 }

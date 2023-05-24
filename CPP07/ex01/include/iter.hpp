@@ -5,11 +5,11 @@
 #include <array> 
 
     template <typename T>
-    void iter(T arr[], T arr_len, void (*function)(T&))
+    void iter(T* arr, size_t arr_len, void (*function)(T&))
     {
         std::cout << "The address of the array: " << &arr << " | ";
         std::cout << "The length of the array: " << arr_len << " | " << std::endl;
-        for (int i = 0; i < arr_len; i++)
+        for (size_t i = 0; i < arr_len; i++)
         {
             (*function)(arr[i]);
         }
