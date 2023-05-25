@@ -8,7 +8,7 @@ int main()
 
     ::iter(arr, len, &call);
 
-	char str[] = "Hello EverYone!";
+	char str[] = "lol lmao";
     std::cout << std::endl;
     ::iter(str, strlen(str), &call);
     std::cout << std::endl;

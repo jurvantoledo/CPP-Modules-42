@@ -7,13 +7,11 @@
     template <typename T>
     void iter(T* arr, size_t arr_len, void (*function)(T&))
     {
-        std::cout << "The address of the array: " << &arr << " | ";
         std::cout << "The length of the array: " << arr_len << " | " << std::endl;
         for (size_t i = 0; i < arr_len; i++)
         {
             (*function)(arr[i]);
         }
-        
     }
 
     template <typename T>
