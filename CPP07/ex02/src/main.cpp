@@ -79,7 +79,7 @@ int main()
     std::cout << "-------------------- TEST 2 ---------------------" << std::endl;
     try
     {
-        for (int i = 0; i <= MAX_VAL; i++)
+        for (int i = 0; i < MAX_VAL; i++)
         {
             numbers[i] = i;
             std::cout << numbers[i] << ",";
