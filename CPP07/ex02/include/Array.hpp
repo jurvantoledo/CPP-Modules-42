@@ -8,7 +8,7 @@ template<typename T>
 class Array
 {
     private:
-        T *_array;
+        T* _array;
         unsigned int _len;
 
         

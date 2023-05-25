@@ -21,7 +21,6 @@ Array<T>::Array(unsigned int n)
 template<typename T>
 Array<T>::Array(const Array &obj)
 {
-    std::cout << "Copy constructor is called" << std::endl;
     this->_array = NULL;
     *this = obj;
 }
@@ -29,7 +28,6 @@ Array<T>::Array(const Array &obj)
 template<typename T>
 Array<T>& Array<T>::operator=(const Array<T> &obj)
 {
-    std::cout << "Copy assignment operator is called" << std::endl;
     if (this->_array)
     {
         delete[] this->_array;
@@ -45,7 +43,6 @@ template<typename T>
 Array<T>::~Array()
 {
     delete[] this->_array;
-    std::cout << "Destructor is called" << std::endl;
 }
 
 template<typename T>
