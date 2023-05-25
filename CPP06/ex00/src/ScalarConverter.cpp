@@ -32,17 +32,13 @@ bool	ScalarConverter::checkChar(std::string val)
 {
 	int len = val.length();
 
-	for (size_t i = 0; val[i]; i++)
+	for (int i = 0; i < len - 2; i++)
 	{
-		if (!isdigit(val[i]) && val[len - 1] == 'f')
+		if (!isdigit(val[i]) && val[i] != '.')
 		{
-			if (i != len && i == 'f')
-			{
-				return (false);
-			}
+			return (false);
 		}
 	}
-	
 	if (val[len - 1] == 'f')
 		return (true);
 	return (false);
