@@ -106,11 +106,14 @@ int main()
         std::cout << copy[i] << ",";
     }
     std::cout << std::endl;
-
-    std::cout << "========================================================================" << std::endl;
+    
+    std::cout << std::endl;
+    std::cout << "-------------------- Check Array Sizes ---------------------" << std::endl;
+    std::cout << std::endl;
 
 	std::cout << "size: " << Array<char>().size() << std::endl;
 	std::cout << "size: " << Array<long>(20).size() << std::endl;
 	std::cout << "size: " << Array<void*>(666).size() << std::endl;
+    std::cout << std::endl;
     return 0;
 }
