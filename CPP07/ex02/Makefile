@@ -1,7 +1,7 @@
 NAME = array
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
-
+HEADERS = ./include/Array.hpp
 SRC = 	./src/main.cpp
 
 OBJ = $(SRC:%.cpp=%.o)

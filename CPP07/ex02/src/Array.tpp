@@ -4,12 +4,17 @@ template<typename T>
 Array<T>::Array()
 {
     this->_array = new T[0];
+    if (!this->_array)
+        throw (IndexOutOfBoundsException());
+    this->_len = 0;
 }
 
 template<typename T>
 Array<T>::Array(unsigned int n)
 {
     this->_array = new T[n];
+    if (!this->_array)
+        throw (IndexOutOfBoundsException());
     this->_len = n;
 
     for (unsigned int i = 0; i < this->_len; i++)
@@ -55,7 +60,7 @@ T& Array<T>::operator[] (size_t i) const
 }
 
 template<typename T>
-unsigned int Array<T>::size(void)
+unsigned int Array<T>::size(void) const
 {
     return (this->_len);
 }

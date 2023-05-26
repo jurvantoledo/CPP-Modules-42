@@ -20,7 +20,7 @@ class Array
         ~Array();
 
         T&		operator[] (size_t i) const;
-        unsigned int  size();
+        unsigned int  size() const;
 
         class IndexOutOfBoundsException : public std::exception
         {

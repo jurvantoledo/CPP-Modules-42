@@ -1,7 +1,7 @@
 NAME = iter
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
-
+HEADERS = ./include/iter.hpp
 SRC = 	./src/main.cpp
 
 OBJ = $(SRC:%.cpp=%.o)
@@ -11,7 +11,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
-%.o: %.cpp
+%.o: %.cpp $(HEADERS)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
