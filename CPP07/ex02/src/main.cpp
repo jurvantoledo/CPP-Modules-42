@@ -52,8 +52,9 @@
 //     for (int i = 0; i < MAX_VAL; i++)
 //     {
 //         numbers[i] = rand();
-//         std::cout << numbers[i] << std::endl;
+//         std::cout << numbers[i] << ",";
 //     }
+//     std::cout << std::endl;
 //     delete [] mirror;//
 //     return 0;
 // }
@@ -115,13 +116,13 @@ int main()
     }
      std::cout << std::endl;
     
-    // std::cout << std::endl;
-    // std::cout << "-------------------- Check Array Sizes ---------------------" << std::endl;
-    // std::cout << std::endl;
+    std::cout << std::endl;
+    std::cout << "-------------------- Check Array Sizes ---------------------" << std::endl;
+    std::cout << std::endl;
 
-	// std::cout << "size: " << Array<char>(0).size() << std::endl;
-	// std::cout << "size: " << Array<long>(20).size() << std::endl;
-	// std::cout << "size: " << Array<void*>(666).size() << std::endl;
-    // std::cout << std::endl;
+	std::cout << "size: " << Array<char>(0).size() << std::endl;
+	std::cout << "size: " << Array<long>(20).size() << std::endl;
+	std::cout << "size: " << Array<void*>(666).size() << std::endl;
+    std::cout << std::endl;
     return 0;
 }
