@@ -1,6 +1,4 @@
 #include "../include/easyfind.hpp"
-#include <vector>
-#include <iterator>
 
 const char* NoElementFound::what(void) const throw()
 {

@@ -1,7 +1,7 @@
 #ifndef EASYFIND_H
 
 #define EASYFIND_H
-#include <exception>
+#include <vector>
 #include <iterator>
 
 class NoElementFound: public std::exception
