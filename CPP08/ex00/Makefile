@@ -4,7 +4,7 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC = 	./src/main.cpp
 
-OBJ = $(SRC:%.cpp=%.o)
+OBJ = ${SRC:%.cpp=%.o}
 
 all: $(NAME)
 

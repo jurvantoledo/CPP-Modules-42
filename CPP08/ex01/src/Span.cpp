@@ -1,28 +1,22 @@
 #include "../include/Span.hpp"
 
-Span::Span(size_t amount) : _max(amount)
-{
-    std::cout << "Default constructor is called" << std::endl;
-}
+Span::Span() {};
+
+Span::Span(unsigned int n) : _max(n) {}
 
 Span::Span(const Span &obj)
 {
-    std::cout << "Copy constructor is called" << std::endl;
     *this = obj;
 }
 
 Span& Span::operator=(const Span &obj)
 {
-    std::cout << "Copy assignment operator is called" << std::endl;
     this->_max = obj._max;
     this->_numbers = obj._numbers;
     return (*this);
 }
 
-Span::~Span()
-{
-    std::cout << "Destructor is called" << std::endl;
-}
+Span::~Span() {}
 
 void Span::addNumber(int val)
 {
@@ -32,29 +26,36 @@ void Span::addNumber(int val)
         throw ArrayOverflow();
 }
 
+void    Span::fillSpan(int amount)
+{
+    for (int i = 0; i < amount; i++)
+        addNumber(std::rand() % 100000);
+}
+
 int Span::shortestSpan()
 {
-    if (this->_numbers.size() < 2)
-    {
+    if (this->_numbers.size() <= 1)
         throw NotEnoughNumbers();
-    }
-    
+
     std::vector<int> copy = this->_numbers;
 
     std::sort(copy.begin(), copy.end());
-
-    return (copy.front());
+    int diff = longestSpan();
+	for (unsigned long i = 0; i < copy.size() - 1; i++)
+	{
+		if (copy[i + 1] - copy[i] < diff)
+			diff = copy[i + 1] - copy[i];
+	}
+    return (diff);
 }
 
 int Span::longestSpan()
 {
-    if (this->_numbers.size() < 2)
+    if (this->_numbers.size() <= 1)
         throw NotEnoughNumbers();
-    
+
     std::vector<int> copy = this->_numbers;
-
     std::sort(copy.begin(), copy.end());
-
     return (copy.back());
 }
 

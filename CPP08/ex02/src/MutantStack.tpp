@@ -1,10 +1,7 @@
 #include "../include/MutantStack.hpp"
 
 template <typename T>
-MutantStack<T>::MutantStack() : std::stack<T>()
-{
-	std::cout << "Constructor is called" << std::endl;
-}
+MutantStack<T>::MutantStack() : std::stack<T>() {}
 
 
 template <typename T>
@@ -21,10 +18,7 @@ MutantStack<T>& MutantStack<T>::operator=(const MutantStack<T> &obj)
 }
 
 template <typename T>
-MutantStack<T>::~MutantStack()
-{
-	std::cout << "Destructor is called" << std::endl;
-}
+MutantStack<T>::~MutantStack() {}
 
 template <typename T>
 typename std::stack<T>::container_type::iterator MutantStack<T>::begin()

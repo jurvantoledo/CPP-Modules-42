@@ -2,6 +2,7 @@
 
 int main()
 {
+    std::cout << "-------------- TEST 1 --------------" << std::endl;
     {   
         MutantStack<int>    mstack;
 
@@ -14,6 +15,7 @@ int main()
         mstack.pop();
 
         std::cout << "The size after pop " << mstack.size() << std::endl;
+        std::cout << "The new top item of array " << mstack.top() << std::endl;
         std::cout << std::endl;
 
         mstack.push(3);
@@ -28,11 +30,15 @@ int main()
         --it;
         while (it != ite)
         {
-            std::cout << *it << std::endl;
+            std::cout << "Array items: " << *it << std::endl;
             ++it;
         }
+        std::cout << std::endl;
         std::stack<int> s(mstack);
     }
+    std::cout << std::endl;
+
+    std::cout << "-------------- TEST 2 --------------" << std::endl;
     {
         MutantStack<int> mstack;
 
@@ -52,5 +58,6 @@ int main()
             ++it;
         }
     }
+    std::cout << std::endl;
     return (0);
 }
