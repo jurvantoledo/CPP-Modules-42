@@ -44,7 +44,9 @@ int Span::shortestSpan()
 	for (unsigned long i = 0; i < copy.size() - 1; i++)
 	{
 		if (copy[i + 1] - copy[i] < diff)
+        {
 			diff = copy[i + 1] - copy[i];
+        }
 	}
     return (diff);
 }
@@ -56,7 +58,7 @@ int Span::longestSpan()
 
     std::vector<int> copy = this->_numbers;
     std::sort(copy.begin(), copy.end());
-    return (copy.back());
+    return (copy.back() - copy.at(0));
 }
 
 const char* Span::ArrayOverflow::what(void) const throw() 
