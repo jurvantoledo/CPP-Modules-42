@@ -41,7 +41,14 @@ int main()
     std::cout << "-------------- TEST 2 --------------" << std::endl;
     {
         MutantStack<int> mstack;
+        mstack.push(5);
+        mstack.push(17);
 
+        std::cout << std::endl;
+        std::cout << "The top item of array " << mstack.top() << std::endl;
+        std::cout << std::endl;
+        mstack.pop();
+        
         mstack.push(3);
         mstack.push(5);
         mstack.push(737);
