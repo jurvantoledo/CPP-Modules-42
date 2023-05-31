@@ -13,7 +13,7 @@ MutantStack<T>::MutantStack(const MutantStack& c) : std::stack<T>(c)
 template <typename T>
 MutantStack<T>& MutantStack<T>::operator=(const MutantStack<T> &obj)
 {
-	*this = obj;
+	*this = obj.c;
 	return (*this);
 }
 

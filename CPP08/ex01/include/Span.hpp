@@ -2,7 +2,9 @@
 
 #define SPAN_H
 #include <iostream>
+#include <exception>
 #include <vector>
+#include <algorithm>
 
 class Span
 {
