@@ -6,14 +6,21 @@
 
 BitcoinExchange::BitcoinExchange(char* input)
 {
-	std::cout << "Constructor is called" << std::endl;
 	this->_file = input;
 }
 
-BitcoinExchange::~BitcoinExchange()
+BitcoinExchange::BitcoinExchange(const BitcoinExchange &obj)
 {
-	std::cout << "~Destructor is called" << std::endl;
+	*this = obj;
 }
+
+BitcoinExchange &BitcoinExchange::operator = (const BitcoinExchange &obj)
+{
+	(void)obj;
+	return (*this);
+}
+
+BitcoinExchange::~BitcoinExchange() {}
 
 std::map<std::string, std::string> BitcoinExchange::ReadCSVFile()
 {
@@ -123,7 +130,7 @@ void BitcoinExchange::ReadTextFile()
 		}
 	}
 	else
-		std::cout << "Could not open the file or file does not exist" << std::endl;
+		std::cout << "Could not open the file or file does nrot exist" << std::endl;
 	o_file.close();
 }
 

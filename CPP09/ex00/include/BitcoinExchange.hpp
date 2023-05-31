@@ -18,6 +18,8 @@ class BitcoinExchange
 
 	public:
 		BitcoinExchange(char* input);
+		BitcoinExchange(const BitcoinExchange &obj);
+		BitcoinExchange & operator = (const BitcoinExchange &obj);
 		~BitcoinExchange();
 
 		void	ReadTextFile();
