@@ -13,6 +13,8 @@ class BitcoinExchange
 {
 	private:
 		std::string _file;
+		std::map<std::string, float>	_map;
+		float	getPrice(std::string date);
 
 	public:
 		BitcoinExchange(std::string input);
@@ -21,6 +23,13 @@ class BitcoinExchange
 		~BitcoinExchange();
 
 		void	getFile();
+		void	getCSVFile();
+
+		class NoValidPriceException : public std::exception
+		{
+			public:
+                const char *what() const throw();
+		};
 
 		class NoValidInputException : public std::exception
         {

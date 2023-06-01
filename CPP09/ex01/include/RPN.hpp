@@ -29,6 +29,12 @@ class RPN
             public:
                 const char *what() const throw();
         };
+
+		class WrongAmountException : public std::exception
+        {
+            public:
+                const char *what() const throw();
+        };
 };
 
 #endif

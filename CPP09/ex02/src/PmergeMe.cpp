@@ -71,8 +71,6 @@ unsigned int    PmergeMe::validate(int size, char *argv[])
 void    PmergeMe::merge(std::vector<int> &vec, size_t left, size_t mid, size_t right)
 {
     std::vector<int> tempArr(right - left + 1);
-
-    // vec[left ... mid] & vec[mid + 1 ... right] mergen
     size_t subArrOneIndex = left, subArrTwoIndex = mid + 1, k = 0;
 
     while (subArrOneIndex <= mid && subArrTwoIndex <= right)
@@ -123,8 +121,6 @@ void    PmergeMe::mergeSort(std::vector<int> &vec, size_t begin, size_t end)
 void    PmergeMe::mergeDeque(std::deque<int> &deck, size_t left, size_t mid, size_t right)
 {
     std::deque<int> tempArr(right - left + 1);
-
-    // vec[left ... mid] & vec[mid + 1 ... right] mergen
     size_t subArrOneIndex = left, subArrTwoIndex = mid + 1, k = 0;
 
     while (subArrOneIndex <= mid && subArrTwoIndex <= right)
@@ -181,7 +177,6 @@ void    PmergeMe::fillVector(std::vector<int> &vec, char *argv[])
 		vec.push_back(num);
 	}
 }
-
 
 void    PmergeMe::fillDeque(std::deque<int> &deque, char *argv[])
 {

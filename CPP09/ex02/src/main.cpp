@@ -12,7 +12,7 @@ int	main(int argc, char *argv[])
 
 	if (argc < 2)
 	{
-		std::cout << "Are you dumb? Use more arguments!" << std::endl;
+		std::cout << "More arguments needed!" << std::endl;
 		return (0);
 	}
 

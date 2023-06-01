@@ -1,21 +1,17 @@
 #include "../include/RPN.hpp"
 
-RPN::RPN(std::string input) : _data(input)
-{
-}
+RPN::RPN(std::string input) : _data(input) {}
 
-RPN::~RPN()
-{
-}
+RPN::~RPN() {}
 
 const char* RPN::NoNumbersException::what(void) const throw()
 {
 	return "Error";
 }
 
-const char* RPN::NumbersTooHighException::what(void) const throw()
+const char* RPN::WrongAmountException::what(void) const throw()
 {
-	return "Error";
+	return "Error: wrong amount of numbers and operators or numbers are too high";
 }
 
 int	RPN::CheckOperators(char c)
@@ -59,12 +55,12 @@ int RPN::CheckRPN()
 		if (isdigit(_data[i]))
 		{
 			if (AmountOfNumbersAndOperators())
-				throw (NoNumbersException());
+				throw (WrongAmountException());
 			if (_data[i] >= '0' && _data[i] <= '9' && \
 				_data[i + 1] != ' ' && \
 				_data[i + 1] != '+' && _data[i + 1] != '-' && \
 				_data[i + 1] != '*' && _data[i + 1] != '/')
-				throw (NumbersTooHighException());
+				throw (WrongAmountException());
 			int num = _data[i] - '0';
 			num_count++;
 			stack.push(num);
