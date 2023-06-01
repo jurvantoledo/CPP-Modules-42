@@ -13,9 +13,9 @@ class RPN
 		RPN(std::string input);
 		~RPN();
 
-		int	CheckRPN();
-		int	CheckOperators(char c);
-		int	AmountOfNumbersAndOperators();
+		int	checkRPN();
+		int	checkOperators(char c);
+		int	amountOfNumbersAndOperators();
 
 		// Exceptions
 		class NumbersTooHighException : public std::exception

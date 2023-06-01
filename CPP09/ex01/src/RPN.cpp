@@ -14,7 +14,7 @@ const char* RPN::WrongAmountException::what(void) const throw()
 	return "Error: wrong amount of numbers and operators or numbers are too high";
 }
 
-int	RPN::CheckOperators(char c)
+int	RPN::checkOperators(char c)
 {
 	if (c == '*' || \
 		c  == '-' || \
@@ -24,7 +24,7 @@ int	RPN::CheckOperators(char c)
 	return (0);
 }
 
-int	RPN::AmountOfNumbersAndOperators()
+int	RPN::amountOfNumbersAndOperators()
 {
 	int	count_digits = 0;
 	int	count_operators = 0;
@@ -33,7 +33,7 @@ int	RPN::AmountOfNumbersAndOperators()
 	{
 		if (isdigit(_data[i]))
 			count_digits++;
-		if (CheckOperators(_data[i]))
+		if (checkOperators(_data[i]))
 			count_operators++;
 	}
 	if (count_operators >= count_digits || count_operators == 0 || count_digits - 1 != count_operators)
@@ -41,7 +41,7 @@ int	RPN::AmountOfNumbersAndOperators()
 	return (0);
 }
 
-int RPN::CheckRPN()
+int RPN::checkRPN()
 {
 	std::stack<int> stack;
 	int	res = 0;
@@ -54,7 +54,7 @@ int RPN::CheckRPN()
 	{
 		if (isdigit(_data[i]))
 		{
-			if (AmountOfNumbersAndOperators())
+			if (amountOfNumbersAndOperators())
 				throw (WrongAmountException());
 			if (_data[i] >= '0' && _data[i] <= '9' && \
 				_data[i + 1] != ' ' && \
@@ -65,8 +65,8 @@ int RPN::CheckRPN()
 			num_count++;
 			stack.push(num);
 		}
-		else if (CheckOperators(_data[i]) \
-				&& !AmountOfNumbersAndOperators())
+		else if (checkOperators(_data[i]) \
+				&& !amountOfNumbersAndOperators())
 		{
 			if (num_count <= 1)
 				throw (NoNumbersException());
