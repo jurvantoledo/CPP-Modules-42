@@ -12,24 +12,21 @@
 class BitcoinExchange
 {
 	private:
-		char* _file;
-		std::vector<std::string> _valArr;
-		std::vector<std::string> _dateArr;
+		std::string _file;
 
 	public:
-		BitcoinExchange(char* input);
+		BitcoinExchange(std::string input);
 		BitcoinExchange(const BitcoinExchange &obj);
 		BitcoinExchange & operator = (const BitcoinExchange &obj);
 		~BitcoinExchange();
 
-		void	ReadTextFile();
-		std::map<std::string, std::string>	ReadCSVFile();
-		void	CompareFiles();
-		int		ValueChecks(std::string value);
-		int		DateChecks(std::string dates);
-		int		GetClosestDate(std::map<std::string, std::string> map, std::string &key);
+		void	getFile();
 
-
+		class NoValidInputException : public std::exception
+        {
+            public:
+                const char *what() const throw();
+        };
 };
 
 #endif

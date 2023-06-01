@@ -9,8 +9,5 @@ int main(int argc, char *argv[])
 	}
 	
 	BitcoinExchange bit(argv[1]);
-
-	bit.ReadTextFile();
-	bit.CompareFiles();
 	return (0);
 }
